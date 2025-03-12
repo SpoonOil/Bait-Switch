@@ -126,7 +126,7 @@ costumes = [
         sprite: sprDryCost,
         name: "Da Dry",
         checkUnlocked: function () {
-            return global.deaths >=50
+            return global.deaths >= 20
         },
         locked: true,
         owned: false,
