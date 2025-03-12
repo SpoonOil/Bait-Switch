@@ -12,6 +12,10 @@ locked = true;
 lockedSprite = sprSwordfish
 
 updateLevel = function () {
+    global.harpoon = level
+}
+
+getLevel () {
     level = global.harpoon
 }
 

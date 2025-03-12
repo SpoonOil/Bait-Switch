@@ -56,7 +56,7 @@ function activateCode(code) {
                     return true;
                 },
                 locked: false,
-                owned: false,
+                owned: true,
                 price: 0,
                 cashPay: true,
                 lockedText: "",
@@ -85,7 +85,7 @@ function activateCode(code) {
                     return true;
                 },
                 locked: false,
-                owned: false,
+                owned: true,
                 price: 0,
                 cashPay: true,
                 lockedText: "",
@@ -117,7 +117,7 @@ function activateCode(code) {
                    return true;
                },
                locked: false,
-               owned: false,
+               owned: true,
                price: 0,
                cashPay: true,
                lockedText: "",
@@ -133,7 +133,7 @@ function activateCode(code) {
                    return true;
                },
                locked: false,
-               owned: false,
+               owned: true,
                price: 0,
                cashPay: true,
                lockedText: "",

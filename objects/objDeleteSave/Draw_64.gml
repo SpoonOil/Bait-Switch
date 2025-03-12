@@ -14,6 +14,7 @@ if (timer > 0 && hover) {
        if(i <= maxTimer - timer){ //draw only the parts of the circle that are equal to or below our remaining stamina
             draw_set_color(c_red)
             draw_circle(newX, newY,3,false); //draw a 3px radius circle at the calculated point
+            draw_set_color(c_white)
        }
     }
 }

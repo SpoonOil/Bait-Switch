@@ -111,20 +111,21 @@ function checkMolaCollision() {
     }
 }
 function resetStars(amount = 100) {
-    baggedStars = []
-    starAngles = []
     
     var starstoKill = amount
     if (global.difficulty = 0) {
-        starstoKill = irandom_range(1, 2)
+        starstoKill = irandom_range(1, 1)
     }
     
-    with (objStar) {
-        if (state == bagged && starstoKill > 0) {
+    for (var i = 0; i < array_length(baggedStars); i++) {
+        star = baggedStars[i]
+        if (starstoKill > 0) {
             starstoKill--
-            x = other.bagX
-            y = other.bagY
-            state = scatter
+            star.x = bagX
+            star.y = bagY
+            star.state = star.scatter
+            array_delete(baggedStars, i, 1)
+            array_delete(starAngles, i, 1)
         }
     }
 }
