@@ -1,0 +1,1 @@
+if (global.dev) game_restart()

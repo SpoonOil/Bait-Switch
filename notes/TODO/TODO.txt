@@ -1,0 +1,23 @@
+TODO:
+=
+ - add tacklebox sprites
+ - kill particles
+ - tweak mola
+ - change mola sprite
+ - add line level 2 sprite
+ - add magnet level sprites
+ - new boom sprites
+ - add new sign sprite
+ - add difficulty selection sprites
+ - make emory cutscene
+ - add anglerfish tut
+ - add costume unlock screens
+ - add magnet hook sprites
+ - implement pixel fish
+ - polish buttons
+ - endgame sfx change
+ - add emory music
+ - change costume shop pricetag sprites
+ - bugfixes
+
+ - credits

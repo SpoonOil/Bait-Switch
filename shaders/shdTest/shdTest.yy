@@ -1,0 +1,12 @@
+{
+  "$GMShader":"",
+  "%Name":"shdTest",
+  "name":"shdTest",
+  "parent":{
+    "name":"Bait&Switch",
+    "path":"Bait&Switch.yyp",
+  },
+  "resourceType":"GMShader",
+  "resourceVersion":"2.0",
+  "type":1,
+}

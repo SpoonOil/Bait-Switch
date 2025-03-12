@@ -1,0 +1,1 @@
+if (global.dev) room_restart()

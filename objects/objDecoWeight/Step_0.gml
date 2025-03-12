@@ -1,0 +1,3 @@
+/// @description 
+
+value = global.weight
