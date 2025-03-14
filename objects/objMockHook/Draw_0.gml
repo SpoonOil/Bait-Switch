@@ -2,6 +2,11 @@
 // You can write your code in this editor
 
 drawMainLine(spawnx, spawny)
+/**
+ * Function Description
+ * @param {any*} lineSrcX Description
+ * @param {any*} lineSrcY Description
+ */
 function drawMainLine(lineSrcX, lineSrcY) {
     var attachX = x + lengthdir_x(60, image_angle+90)
     var attachY = y + lengthdir_y(60, image_angle+90)
@@ -93,3 +98,7 @@ function drawMainLine(lineSrcX, lineSrcY) {
     }
 }
 draw_self()
+
+draw_sprite_ext(sprMagnet, 1, x, y, image_xscale, image_yscale, 0, c_white, 1)
+
+draw_sprite_ext(sprBait, global.bait-1, x, y, image_xscale, image_yscale, 0, c_white, 1)

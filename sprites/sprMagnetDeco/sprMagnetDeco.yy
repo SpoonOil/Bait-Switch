@@ -3,9 +3,9 @@
   "%Name":"sprMagnetDeco",
   "bboxMode":0,
   "bbox_bottom":498,
-  "bbox_left":588,
-  "bbox_right":783,
-  "bbox_top":262,
+  "bbox_left":502,
+  "bbox_right":796,
+  "bbox_top":91,
   "collisionKind":1,
   "collisionTolerance":0,
   "DynamicTexturePage":false,
@@ -13,6 +13,8 @@
   "For3D":false,
   "frames":[
     {"$GMSpriteFrame":"","%Name":"8ddd9c6a-afb3-4801-88fd-cebc883195ff","name":"8ddd9c6a-afb3-4801-88fd-cebc883195ff","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"cb0473d8-316f-4f7a-ab4b-fe1b7ff2be55","name":"cb0473d8-316f-4f7a-ab4b-fe1b7ff2be55","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"a8c002b1-cc2e-4ccd-963a-855e5255bc46","name":"a8c002b1-cc2e-4ccd-963a-855e5255bc46","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
@@ -49,7 +51,7 @@
     },
     "eventStubScript":null,
     "eventToFunction":{},
-    "length":1.0,
+    "length":3.0,
     "lockOrigin":false,
     "moments":{
       "$KeyframeStore<MomentsEventKeyframe>":"",
@@ -71,6 +73,12 @@
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"8ddd9c6a-afb3-4801-88fd-cebc883195ff","path":"sprites/sprMagnetDeco/sprMagnetDeco.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"e6e7c5ed-1e9f-43d4-be8d-355ad137a546","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"cb0473d8-316f-4f7a-ab4b-fe1b7ff2be55","path":"sprites/sprMagnetDeco/sprMagnetDeco.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"67431a6b-f017-4367-8b79-34a5dc1f91a1","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"a8c002b1-cc2e-4ccd-963a-855e5255bc46","path":"sprites/sprMagnetDeco/sprMagnetDeco.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"e59d00da-f1fe-49d0-ba87-2a36d0693afd","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

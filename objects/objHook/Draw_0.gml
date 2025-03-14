@@ -18,9 +18,14 @@ switch (orientation) {
 draw_self()
 
 if (magnetLevel > 0 ) {
-    draw_sprite_ext(sprMagnet, 0, x, y, 0.5, 0.5, 0, c_white, 1)
+    drawMagnet()
 }
 
 if (baitLevel > 0) {
-    //draw_sprite_ext(sprBait, baitLevel-1, x, y, 0.15, 0.15, 0, c_white, 1)
+    draw_sprite_ext(sprBait, baitLevel-1, x, y, image_xscale, image_yscale, 0, c_white, 1)
+}
+
+
+function drawMagnet () {
+    draw_sprite_ext(sprMagnet, magnetLevel-1, x, y, image_xscale, image_yscale, 0, c_white, 1)
 }

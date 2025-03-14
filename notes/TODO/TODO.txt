@@ -1,20 +1,21 @@
 TODO:
 =
- - add tacklebox sprites
- - tweak mola
- - change mola sprite
- - add line level 2 sprite
- - add magnet level sprites
+---
  - new boom sprites
- - add new sign sprite
- - add difficulty selection sprites
- - make emory cutscene
- - add costume unlock screens
- - add magnet hook sprites
  - implement pixel fish
  - endgame sfx change
  - add emory music
  - change costume shop pricetag sprites
  - bugfixes
-
+ - get new bait sprites
+ - make tape not look like shit
  - credits
+---
+Todo RN
+---
+---
+ - tweak mola
+ - make sure magnet actually does something
+ - add costume unlock screens
+ - maybe tweak callout
+

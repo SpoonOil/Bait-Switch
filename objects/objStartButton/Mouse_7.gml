@@ -3,13 +3,14 @@
 // Inherit the parent event
 event_inherited();
 
-audio_play_sound(sndGoFish, 10, false)
-
 if (global.tutorial1) {
     global.tutorial1 = false;
-    room_goto(Tutorial)
+    room_goto(CutsceneFishing)
     exit
 }
+
+audio_play_sound(sndGoFish, 10, false)
+
 
 if (global.line == 1 && global.tutorial2) {
     global.tutorial2 = false;
@@ -28,6 +29,6 @@ switch (global.line) {
         room_goto(Fishing_3)
     break;
     default: 
-        room_goto(Fishing_3)
+        room_goto(TestBlank)
     break;
 }

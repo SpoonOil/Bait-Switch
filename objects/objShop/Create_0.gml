@@ -580,7 +580,7 @@ function buyCostume(costume) {
         _sold.sprite_index = sprSold
         audio_play_sound(sndSold, 10, false)
         costume.owned = true
-        global.stars-=costume.price
+        global.starfish-=costume.price
         checkLocked()
     } else {
         broke = instance_create_layer(mouse_x, mouse_y, "Booms", objBoom)

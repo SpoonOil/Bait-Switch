@@ -1,5 +1,7 @@
 /// @description 
 
+if (sprite_index == -1) exit // safeguard for nospriters
+    
 if (image_index = 0) {
     if (!pressed) draw_sprite_ext(sprite_index,image_index,x+1,y+7,image_xscale,image_yscale, image_angle, c_black, 1) 
     if (hover) {

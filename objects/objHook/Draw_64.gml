@@ -5,8 +5,8 @@ array_copy(lines, 0, linePoints, 0, array_length(linePoints))
 drawPortalLines(lines)
 
 if (!checkOffscreen() && array_length(lines) > 0) {
-    lineSrcX = lines[0][0]
-    lineSrcY = lines[0][1]
+    var lineSrcX = lines[0][0]
+    var lineSrcY = lines[0][1]
     drawMainLine(lineSrcX, lineSrcY)
 }
 

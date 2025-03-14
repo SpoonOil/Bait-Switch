@@ -13,7 +13,7 @@ lockedSprite = sprMola
 maxLevel = 100
 
 prices = []
-for (var i = 0; i < maxLevel; i++) {
+for (var i = 1; i < maxLevel; i++) {
   price = i * 100
   array_push(prices, price)
 }
