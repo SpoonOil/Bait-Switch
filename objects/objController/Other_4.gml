@@ -46,7 +46,14 @@ function pauseAll() {
     }
 }
 
-if (room == TheEnd || room == CostumeShop) {
+if (
+    room == TheEnd || 
+    room == CostumeShop || 
+    room == CutsceneFishing ||
+    room == CostumeUnlockRoom ||
+    room == UnlockRoom ||
+    room == SpecialCaught
+) {
     visible = false;
 } else if (visible == false) {
     visible = true;

@@ -11,3 +11,4 @@ if (global.beatGame && invisUnlock) {
     sprite_index = sprCostumeUnlockInvis
 }
 
+audio_play_sound(sndUnlock, 100, false)

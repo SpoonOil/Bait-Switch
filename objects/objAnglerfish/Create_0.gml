@@ -11,7 +11,7 @@ forcefieldFish = []
 
 forcefieldRotation = 0
 forcefieldRotSpeed = 3
-value = 20
+value = 100
 stuck = false;
 stuckTo = undefined 
 

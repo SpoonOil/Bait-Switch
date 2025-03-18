@@ -15,7 +15,7 @@ if (global.cash > selected.price) {
     selected.regenerateButtons()
 } else {
     var broke = instance_create_layer(x, y, "Booms", objBoom) 
-    broke.image_index = 4
+    broke.image_index = 5
 }
 
 function playSound(snd) {

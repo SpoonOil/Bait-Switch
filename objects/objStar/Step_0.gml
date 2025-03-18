@@ -10,4 +10,5 @@ if ((scaling > baseScaling + maxDiff)||(scaling < baseScaling - maxDiff)) {
 image_xscale = scaling
 image_yscale = scaling
 
+keepInBounds()
 state()

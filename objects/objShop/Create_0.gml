@@ -231,9 +231,9 @@ costumes = [
         sprite: sprInvertedCost,
         name: "Da Inverted",
         checkUnlocked: function () {
-            return false;
+            return true;
         },
-        locked: true,
+        locked: false,
         owned: false,
         price: 15,
         cashPay: false,
@@ -257,7 +257,7 @@ costumes = [
         sprite: sprEmorald,
         name: "Da Emorald",
         checkUnlocked: function () {
-            return false;
+            return true;
         },
         locked: false,
         owned: false,
@@ -267,8 +267,8 @@ costumes = [
         flavorText: "It’s not spelled wrong it’s a creative choice"
     },
     {
-        sprite: sprWhiteGreen,
-        name: "Da White Green & Red One",
+        sprite: sprItalyCost,
+        name: "Da Italy",
         checkUnlocked: function () {
             return true;
         },
@@ -280,21 +280,7 @@ costumes = [
         flavorText: "Self explanatory"
     },
     {
-        sprite: sprChristmasCost,
-        name: "Da Cooler White Green & Red One",
-        checkUnlocked: function () {
-            whiteCost = objShop.getCostumeFromSprite(sprWhiteGreen)
-            return whiteCost.owned
-        },
-        locked: true,
-        owned: false,
-        price: 5,
-        cashPay: false,
-        lockedText: "Purchase Da White Green & Red One",
-        flavorText: "Approximately 20% cooler"
-    },
-    {
-        sprite: sprBarreleyeCost,
+        sprite: sprBarrelCost,
         name: "Da Barreleye",
         checkUnlocked: function () {
             return global.scatter == 2;
@@ -376,7 +362,7 @@ costumes = [
         sprite: sprOldFashionedCost,
         name: "Da Silly Willy",
         checkUnlocked: function () {
-            return true;
+            return global.molaBounces >= 5;
         },
         locked: true,
         owned: false,
@@ -402,12 +388,12 @@ costumes = [
         sprite: sprJokerCost,
         name: "Da Last Laugh",
         checkUnlocked: function () {
-            var anyLocked = array_any(objShop.costumes, function checkLocked(costume) { 
+            var anyLocked = array_all(objShop.costumes, function (costume) { 
                 var exceptedCostumes = [sprSqueakCost, sprJamCost, sprAnglerfishCost, sprBarreleyeCost]
-                if (!array_contains(exceptedCostumes, costume)) {
+                if (array_contains(exceptedCostumes, costume.sprite)) {
                     return costume.locked
                 } else {
-                    return false
+                    return costume.locked
                 }
             })
             return anyLocked
@@ -446,7 +432,7 @@ costumes = [
         flavorText: "It’s 40% titanium and powered by uranium"
     },
     {
-        sprite: sprPlaceholder,
+        sprite: sprPixelCost,
         name: "Da 8-Bit",
         checkUnlocked: function () {
             return global.portal >= 3
@@ -575,6 +561,7 @@ function buyCostume(costume) {
         costume.owned = true
         global.cash-=costume.price
         checkLocked()
+        objController.save()
     } else if (!costume.cashPay && global.starfish > costume.price) {
         var _sold = instance_create_layer(mouse_x, mouse_y, "Booms", objBoom) 
         _sold.sprite_index = sprSold
@@ -582,9 +569,10 @@ function buyCostume(costume) {
         costume.owned = true
         global.starfish-=costume.price
         checkLocked()
+        objController.save()
     } else {
         broke = instance_create_layer(mouse_x, mouse_y, "Booms", objBoom)
-        broke.image_index = 4
+        broke.image_index = 5
     }
 }
 

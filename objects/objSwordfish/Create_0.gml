@@ -3,7 +3,7 @@
 direction = 7
 speed = 40
 
-value = 20
+value = 50
 stuck = false;
 stuckTo = undefined 
 

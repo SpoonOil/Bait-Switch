@@ -1,8 +1,8 @@
 /// @description 
-if (other.state() == "firing") {
+if (other.state == other.firing) {
     if (!stuck) {
         var _plus = instance_create_layer(x, y, "Booms", objBoom)
-        _plus.image_index = 3
+        _plus.image_index = 4
         stuck = true;
         stuckTo = other
     }

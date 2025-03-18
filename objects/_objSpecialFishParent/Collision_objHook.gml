@@ -1,5 +1,5 @@
 /// @description Insert description here
 
-if (other.state() != "aiming") {
+if (other.state() != other.aiming) {
     catchFish(other)
 }

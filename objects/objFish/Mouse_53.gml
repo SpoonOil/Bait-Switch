@@ -7,7 +7,7 @@ if (canDash) {
     objParticleManager.createDashParticles(x, y, image_angle)
     speed = 50 
     direction = image_angle
-    resetStars()
+    resetStars(1)
     state = dashing
     global.dashes++
     canDash = false;

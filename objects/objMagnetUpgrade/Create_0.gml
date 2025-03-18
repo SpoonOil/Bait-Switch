@@ -17,4 +17,5 @@ updateLevel = function () {
 getLevel = function () {
     level = global.magnet   
 }
+
 updatePrice()

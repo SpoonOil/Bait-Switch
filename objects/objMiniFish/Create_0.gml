@@ -28,7 +28,11 @@ stuckTo = undefined
  */
 function nudgeAwayFrom(object, rangeFactor = 1, strengthMod = 1) {
     with (object) {
-        if (point_distance(other.x, other.y, x, y) < other.protectedRange*rangeFactor && !stuck) {
+        var stuckFlag = false
+        if (variable_instance_exists(self, "stuck")) {
+            stuckFlag = stuck
+        }
+        if (point_distance(other.x, other.y, x, y) < other.protectedRange*rangeFactor && !stuckFlag) {
             other.closeDx += (other.x - x ) * strengthMod
             other.closeDy += (other.y - y) * strengthMod
         } 
@@ -111,6 +115,9 @@ updatePosition = function updatePosition () {
     
     nudgeAwayFrom(objFish, 1.2, 20)
     nudgeAwayFrom(objBarreleye, 1.5, 20)
+    if (global.magnet > 0 && objHook.state != objHook.aiming) {
+        nudgeAwayFrom(objHook, 1.5+global.magnet*0.5, -30)
+    }
     
 
     

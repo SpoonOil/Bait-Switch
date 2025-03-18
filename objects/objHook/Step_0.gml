@@ -2,7 +2,7 @@
 
 // update position
 
-var moveDist = vy*(1+0.20*weightLevel) // move distance regardless of direction
+var moveDist = vy*(1+0.15*weightLevel) // move distance regardless of direction
 switch (orientation) {
     case "top":
         x+=0
@@ -26,3 +26,6 @@ if (global.hookActive) {
     
     state()
 }
+
+//connection point for the line
+

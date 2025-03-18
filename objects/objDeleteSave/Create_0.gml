@@ -9,4 +9,4 @@ if (file_exists("saveData.dat")) {
 }
 
 timer = 0
-maxTimer = 300
+maxTimer = 150

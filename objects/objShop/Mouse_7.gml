@@ -2,6 +2,7 @@
 // You can write your code in this editor
 var scrolling = false
 var scrollCutoff = 20
+if (oldoldX == undefined) oldoldX = 1;
 if (abs(mouse_x - oldoldX) > scrollCutoff || (leftTime > 30)) {
     scrolling = true;
 }
@@ -21,5 +22,5 @@ if (_target != -1 && !scrolling) {
     
     selectedCostume = _currentCostume
 }
- oldoldX = undefined
+oldoldX = undefined 
 leftTime = 0

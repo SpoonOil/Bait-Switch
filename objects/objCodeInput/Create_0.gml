@@ -94,9 +94,6 @@ function activateCode(code) {
             array_push(objShop.costumes, squeakCost)
             objShop.unlockCostume("Da Squeak");
             break;
-        case "MOUSE":
-            objShop.unlockCostume("Da Old Fashioned");
-            break;
         case "RISKYSPR":
             objShop.unlockCostume("Da 'Urple")
             break;
@@ -112,7 +109,7 @@ function activateCode(code) {
         case "CANTSPEL":
             var oldBarrel =     {
                sprite: sprBarreleyeCost,
-               name: "Da ProtoBarreleye",
+               name: "Da Proto-Barrel",
                checkUnlocked: function () {
                    return true;
                },
@@ -128,7 +125,7 @@ function activateCode(code) {
         case "BADCOST":
             var oldAngler =     {
                sprite: sprAnglerfishCost,
-               name: "Da ProtoAnglerfish",
+               name: "Da Proto-Angler",
                checkUnlocked: function () {
                    return true;
                },
@@ -148,10 +145,39 @@ function activateCode(code) {
             objShop.unlockCostume("Da Mounted")
             break;
         case "BIXBY":
-            objShop.unlockCostume("Da Cooler White Green and Red One")
+            var shittyCost =     {
+                sprite: sprWhiteGreen,
+                name: "Da Cooler White Green & Red One",
+                checkUnlocked: function () {
+                    return true
+                },
+                locked: false,
+                owned: false,
+                price: 5,
+                cashPay: false,
+                lockedText: "",
+                flavorText: "Approximately 20% cooler"
+            }
+            array_push(objShop.costumes, shittyCost)
             break;
         case "YOGI":
-            objShop.unlockCostume("Da White Green and Red One")
+            var shittyCost2 = {
+                sprite: sprWhiteGreen,
+                name: "Da Cooler White Green & Red One",
+                checkUnlocked: function () {
+                    return true
+                },
+                locked: false,
+                owned: false,
+                price: 5,
+                cashPay: false,
+                lockedText: "",
+                flavorText: "Approximately 20% cooler"
+            }
+            array_push(objShop.costumes, shittyCost2)
+            break;
+        case "MOUSE":
+            objShop.unlockCostume("Da Silly Willy")
             break;
     }
 }

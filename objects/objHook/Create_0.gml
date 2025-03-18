@@ -46,7 +46,10 @@ spawnHarpoon = function () {
 }
 
 triggerHarpoons = function () {
-    var _harpoonDelay = 15 // frames
+    var _harpoonDelay = 20 // frames
+    if (global.difficulty == 0) {
+        _harpoonDelay = 30
+    }
     if (canTrigger) {
         with (array_shift(harpoons)) {
             if (state != finished) {
@@ -232,13 +235,13 @@ scatterHooks = function () {
     switch (scatterLevel) {
         case 1:
             _miniHook1 = instance_create_layer(x, y, "Instances", objMiniHook)
-            _miniHook1.direction = 310
+            _miniHook1.direction = 310 + image_angle
         break;
         case 2:
             _miniHook1 = instance_create_layer(x, y, "Instances", objMiniHook)
             _miniHook2 = instance_create_layer(x, y, "Instances", objMiniHook)
-            _miniHook1.direction = 310
-            _miniHook2.direction = 220 
+            _miniHook1.direction = 310 + image_angle
+            _miniHook2.direction = 220 + image_angle
         break;
     }
 }
@@ -365,7 +368,7 @@ function enterPortalSink() {
     var bound = findClosestFishBound()
     
     orientation = bound
-    var gap = sprite_width*8
+    var gap = sprite_width*16
     switch (bound) {
         case "left":
             y = objFish.y
@@ -437,6 +440,13 @@ reeling = function () {
         forceFieldRepulse()
     }
     if (checkOffscreen()) {
+        
+        if (objFish.stuck && objFish.stuckTo != self) {
+            objFish.stuckTo = self
+        }
+        
+        instance_destroy(objMiniHook)
+        instance_destroy(objHarpoon)
         if (array_length(portalsStack) == 0) { 
             reset()
         } else {
@@ -523,6 +533,8 @@ reeledPortals = 0
 uses = 3;
 vx = 0;
 vy = 0;
+attachX = x + lengthdir_x(60, image_angle+90)
+attachY = y + lengthdir_y(60, image_angle+90)
 xspd = 0
 maxXSpd = 15
 minXSpd = 0

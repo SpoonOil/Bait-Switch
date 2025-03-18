@@ -62,6 +62,13 @@ scatter = function () {
     return "scatter"
 }
 
+function shoot() {
+    direction = objFish.direction + 180
+    speed = random_range(50, 100)
+    
+    state = none
+}
+
 function keepInBounds() {
     var _buffer = 50
     if (y < _buffer) {

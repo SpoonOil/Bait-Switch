@@ -1,21 +1,11 @@
 TODO:
 =
 ---
- - new boom sprites
- - implement pixel fish
- - endgame sfx change
- - add emory music
- - change costume shop pricetag sprites
- - bugfixes
- - get new bait sprites
  - make tape not look like shit
- - credits
----
-Todo RN
----
----
  - tweak mola
- - make sure magnet actually does something
- - add costume unlock screens
- - maybe tweak callout
-
+ - credits
+ - make everything quieter
+ - rebalance shop prices
+ - debug costume code
+ - make sure all sounds and music in the game are at a balanced volume
+---

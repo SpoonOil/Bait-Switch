@@ -4,7 +4,7 @@
 if (stuck) {  
     image_xscale = base_xscale  
     speed = 0 
-    resetStars()
+    resetStars(100)
     switch (stuckTo.object_index) {
         case objHook:
             image_angle = 90

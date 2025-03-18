@@ -31,10 +31,6 @@ if (keyboard_check(vk_control) && keyboard_check(ord("S"))) {
     
 }
 
-if (keyboard_check(vk_control) && keyboard_check(ord("L"))) {
-    load()
-}
-
 
 
 if (debugMode) {

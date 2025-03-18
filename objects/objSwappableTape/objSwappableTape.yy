@@ -9,8 +9,8 @@
   "name":"objSwappableTape",
   "overriddenProperties":[],
   "parent":{
-    "name":"Tacklebox",
-    "path":"folders/Objects/Tacklebox.yy",
+    "name":"Tapes",
+    "path":"folders/Objects/Tacklebox/Tapes.yy",
   },
   "parentObjectId":null,
   "persistent":false,

@@ -30,8 +30,12 @@ updatePrice = function updatePrice () {
         if (parent == other.pricetag) {
             if (other.price < 1000) {
                 value = other.price
+            } else if (price < 10000) {
+                
+                
+                value = string_format(price/1000, 1, 1) + "k"
             } else {
-                value = string(other.price/1000) + "k"
+                value = string_format(price/1000, 1, 0) + "k"
             }
         }
     }
@@ -98,6 +102,8 @@ function generateButtons() {
         var buyButton = createBuyButton()
     } else if (level == maxLevel) {
         var sellButton = createSellButton()
+        var maxedBoom = instance_create_layer(x+ sprite_width/2, y + sprite_height/2, "Booms", objBoom)
+        maxedBoom.sprite_index = sprMaxedOut
     } else {
         var buyButton = createBuyButton()
         var sellButton = createSellButton()

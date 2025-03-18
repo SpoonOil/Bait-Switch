@@ -16,4 +16,10 @@ if (global.anglerFails >= 16) {
     room_goto(AnglerTutorial2)
     exit
 }
+
+if (global.deaths == 20) {
+    room_goto(CostumeUnlockRoom)
+    exit
+}
+
 room_goto(Dock)

@@ -46,13 +46,17 @@ moving = function () {
     checkMolaCollision()
     
     
-    if (hookActive && objHook.magnetLevel > 0 && point_distance(x, y, objHook.x, objHook.y) < objHook.magnetLevel*150) {
+    if (
+        objHook.state != objHook.aiming && 
+        objHook.magnetLevel > 0 && 
+        point_distance(x, y, objHook.x, objHook.y) < 150+objHook.magnetLevel*75
+    ) {
         var adjustedMagnetLevel = objHook.magnetLevel
         if (global.beatGame && adjustedMagnetLevel > 2) {
             adjustedMagnetLevel = 2
         }
-        x = x + lengthdir_x(adjustedMagnetLevel, point_direction(x, y, objHook.x, objHook.y))
-        y = y + lengthdir_y(adjustedMagnetLevel, point_direction(x, y, objHook.x, objHook.y))
+        x = x + lengthdir_x(5+adjustedMagnetLevel*1.7, point_direction(x, y, objHook.x, objHook.y))
+        y = y + lengthdir_y(5+adjustedMagnetLevel*1.7, point_direction(x, y, objHook.x, objHook.y))
     }
     image_angle = direction
     
@@ -113,12 +117,17 @@ function checkMolaCollision() {
 function resetStars(amount = 100) {
     
     var starstoKill = amount
-    if (global.difficulty = 0) {
-        starstoKill = irandom_range(1, 1)
+    if (starstoKill = 1 && array_length(baggedStars) > 0) {
+        array_pop(starAngles)
+        var star = array_pop(baggedStars)
+        star.x = bagX
+        star.y = bagY
+        star.state = star.shoot
+        return
     }
     
     for (var i = 0; i < array_length(baggedStars); i++) {
-        star = baggedStars[i]
+        var star = baggedStars[i]
         if (starstoKill > 0) {
             starstoKill--
             star.x = bagX

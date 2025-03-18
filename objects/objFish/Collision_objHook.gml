@@ -1,6 +1,6 @@
 /// @description 
 
-if (!stuck ) {
+if (!stuck && other.state != other.aiming) {
     stuck = true;
     stuckTo = other;
     

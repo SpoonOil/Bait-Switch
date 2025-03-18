@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":3,
   "conversionMode":0,
-  "duration":69.87755,
+  "duration":72.30694,
   "name":"sndDock",
   "parent":{
     "name":"Sounds",

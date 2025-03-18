@@ -4,6 +4,8 @@
 // Inherit the parent event
 event_inherited();
 
+value = 100
+
 state()
 
 if (stuck) {

@@ -12,9 +12,6 @@ if (!checkOffscreen() && array_length(lines) > 0) {
 
 
 function drawMainLine(lineSrcX, lineSrcY) {
-    var attachX = x + lengthdir_x(60, image_angle+90)
-    var attachY = y + lengthdir_y(60, image_angle+90)
-    
     var dist = 0
     var segments = 100
     var segLength = 0
@@ -151,3 +148,7 @@ function renderCallout() {
 if (debugInfo) {
     draw_text(10, 100, string(x)+", "+string(y))
 }
+
+//attach points for line
+attachX = x + lengthdir_x(60, image_angle+90)
+attachY = y + lengthdir_y(60, image_angle+90)

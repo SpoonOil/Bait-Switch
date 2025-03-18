@@ -99,6 +99,6 @@ function drawMainLine(lineSrcX, lineSrcY) {
 }
 draw_self()
 
-draw_sprite_ext(sprMagnet, 1, x, y, image_xscale, image_yscale, 0, c_white, 1)
+draw_sprite_ext(sprMagnet, global.magnet-1, x, y, image_xscale, image_yscale, 0, c_white, 1)
 
 draw_sprite_ext(sprBait, global.bait-1, x, y, image_xscale, image_yscale, 0, c_white, 1)

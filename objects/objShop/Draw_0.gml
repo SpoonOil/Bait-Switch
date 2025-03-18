@@ -67,7 +67,7 @@ for (var _i = 0; _i < _nodes; _i++) {
         
         // sillouette
         draw_sprite_ext(_costume.sprite, 0, _x, _y+30, _scaling, _scaling, 0, c_black, 1)
-        if (_costume.name == "Da Discreet") {
+        if (_costume.name == "Da Discreet" || _costume.name == "Da Silly Willy") {
             draw_sprite_ext(sprDefaultFish, 0, _x, _y+30, _scaling, _scaling, 0, c_black, 1)
         }
         
@@ -87,7 +87,7 @@ for (var _i = 0; _i < _nodes; _i++) {
                 var costumeString = string(_costume.price)
                 
                 if (_costume.cashPay) {
-                    costumeString = "$ "+costumeString
+                    costumeString = "[scale,0.4][sprRefDollar,0][/]"+costumeString
                 } else {
                     costumeString = "[scale,0.75][sprRefStar,0][/] "+costumeString
                 }

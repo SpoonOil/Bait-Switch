@@ -22,10 +22,10 @@ if (magnetLevel > 0 ) {
 }
 
 if (baitLevel > 0) {
-    draw_sprite_ext(sprBait, baitLevel-1, x, y, image_xscale, image_yscale, 0, c_white, 1)
+    draw_sprite_ext(sprBait, baitLevel-1, x, y, image_xscale, image_yscale, image_angle, c_white, 1)
 }
 
 
 function drawMagnet () {
-    draw_sprite_ext(sprMagnet, magnetLevel-1, x, y, image_xscale, image_yscale, 0, c_white, 1)
+    draw_sprite_ext(sprMagnet, magnetLevel-1, x, y, image_xscale, image_yscale, image_angle, c_white, 1)
 }
