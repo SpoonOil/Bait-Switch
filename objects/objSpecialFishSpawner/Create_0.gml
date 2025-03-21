@@ -66,7 +66,7 @@ function spawnSpecialFish() {
                 break;
                 case TestBlank:
                     show_debug_message("bruh")
-                    instance_create_layer(0 -_xDiff, 520, "Instances", objAnglerfish) 
+                    instance_create_layer(0 -_xDiff, 520, "Instances", objMola) 
                     specialSpawned = true;  
                 break;
                     

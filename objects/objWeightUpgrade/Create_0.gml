@@ -8,6 +8,7 @@ info = "The more I add the faster my hook’ll drop. These are pristine weights 
 
 pricetag = "weight"
 
+prices = [200, 800, 1000]
 updateLevel = function () {
     global.weight = level
 }

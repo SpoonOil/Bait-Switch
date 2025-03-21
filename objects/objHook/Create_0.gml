@@ -225,7 +225,8 @@ reset = function() {
     }
     
     instance_destroy(objMiniHook)
-    instance_destroy(objHarpoon)
+    instance_destroy(objHarpoon) 
+    objController.collectData()
 }
 
 scatterHooks = function () {

@@ -8,7 +8,7 @@ info = "The scatter shot adds an additional hook (Max of 3) to my cast, spreadin
 pricetag = "scatter"
 locked = true;
 
-prices = [100, 200, 0]
+prices = [150, 500, 0]
 maxLevel = 2
 lockedSprite = sprBarreleye
 

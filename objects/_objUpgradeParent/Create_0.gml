@@ -26,16 +26,17 @@ updatePrice = function updatePrice () {
     if (level == maxLevel) {
         price = 0
     }
-    with (objPriceRender) {
-        if (parent == other.pricetag) {
-            if (other.price < 1000) {
-                value = other.price
-            } else if (price < 10000) {
-                
-                
-                value = string_format(price/1000, 1, 1) + "k"
-            } else {
-                value = string_format(price/1000, 1, 0) + "k"
+    
+    if (!locked) {
+        with (objPriceRender) {
+            if (parent == other.pricetag) {
+                if (other.price < 1000) {
+                    value = other.price
+                } else if (price < 10000) {
+                    value = string_format(price/1000, 1, 1) + "k"
+                } else {
+                    value = string_format(price/1000, 1, 0) + "k"
+                }
             }
         }
     }

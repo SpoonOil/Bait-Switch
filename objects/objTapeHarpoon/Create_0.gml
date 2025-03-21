@@ -4,5 +4,5 @@
 event_inherited();
 
 text = "  Harpoon"
-text_xscale = 0.85
+text_xscale = 0.70
 priceRenderer.parent = "harpoon"

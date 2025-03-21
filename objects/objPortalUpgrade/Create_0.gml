@@ -14,9 +14,10 @@ maxLevel = 100
 
 prices = []
 for (var i = 1; i < maxLevel; i++) {
-  price = i * 100
+  price = i * 500
   array_push(prices, price)
 }
+array_push(prices, 0) // ending 0 for max price
 
 updateLevel = function () {
     global.portal = level

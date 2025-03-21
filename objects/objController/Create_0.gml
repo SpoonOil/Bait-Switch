@@ -7,6 +7,7 @@ global.weight   = 0;
 
 global.magnet   = 0;
 
+
 global.harpoon  = 0;
 global.scatter  = 0;
 global.portal   = 0;
@@ -32,7 +33,7 @@ global.portalUnlock     = false;
 global.spawnFishes      = true;
 global.spawnStarfish    = false;
 global.hookActive       = true;
-global.dev              = false;
+global.dev              = true;
 global.canSell          = false;
 global.beatGame         = false;
 global.caughtMola       = false;
@@ -43,7 +44,7 @@ global.tutorial1        = true;
 global.tutorial2        = true;
 
 debugMode = false;
-
+timer = 0
 songs = []
 image_xscale = 0.5
 image_yscale = 0.5
@@ -103,7 +104,8 @@ function save() {
         firstFish : global.firstFish,
         tutorial1 : global.tutorial1,
         tutorial2 : global.tutorial2,
-        spawnStarfish : global.spawnStarfish
+        spawnStarfish : global.spawnStarfish,
+        data
     }
     
     var saveString = json_stringify(save)
@@ -112,6 +114,38 @@ function save() {
     if (instance_number(objSaveDisplay) < 1) {
         var saveIndicator = instance_create_layer(room_width/2, -scribble("Game Saved!").starting_format("fontDisplay", c_white).get_height(), "Instances", objSaveDisplay)
     }
+}
+
+data = []
+
+function Data(
+    _time, 
+    _cash, 
+    _caught, 
+    _line, 
+    _bait, 
+    _magnet, 
+    _harpoon, 
+    _portal, 
+    _weight, 
+    _scatter
+) 
+constructor {
+    time = _time;
+    caught = _caught;
+    line = _line;
+    bait = _bait;
+    magnet = _magnet;
+    harpoon = _harpoon;
+    portal = _portal;
+    weight = _weight;
+    scatter = _scatter;
+    cash = _cash;
+}
+
+function collectData() {
+    var dataPoint = new Data(timer, global.cash, global.caught, global.line, global.bait, global.magnet, global.harpoon, global.portal, global.weight, global.scatter)
+    array_push(data, dataPoint)
 }
 
 function load() {
@@ -123,6 +157,8 @@ function load() {
     struct_foreach(save, function (key, value) {
         variable_global_set(key, value)
     })
+    
+    data = save.data
     
     if (instance_number(objLoadDisplay) < 1) {
         var saveIndicator = instance_create_layer(room_width/2, -scribble("Game Loaded!").starting_format("fontDisplay", c_white).get_height(), "Instances", objLoadDisplay)

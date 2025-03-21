@@ -28,7 +28,11 @@ if (
 
 if (keyboard_check(vk_control) && keyboard_check(ord("S"))) {
     save()
-    
+}
+
+
+if (keyboard_check(vk_control) && keyboard_check(ord("G"))) {
+    room_goto(GraphRoom)
 }
 
 
@@ -48,3 +52,6 @@ if (debugMode) {
         giveMoney()
     }
 }
+
+timer++
+

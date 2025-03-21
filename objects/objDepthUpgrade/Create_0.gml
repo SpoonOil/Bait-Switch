@@ -9,7 +9,8 @@ info2 = "Looks like there's some starfish tangled in my line, hope there's not a
 maxInfo = "WE NEED TO GO DEEPER! Just kidding, actually, that's it. I think I've gone as deep as I can. The fish are going to get uglier and the starfish should be just as abundant. Strange vibrations keep traveling up my line and into my hand."
 
 infos = [info, info2]
-price = 200;
+
+prices = [200, 800, 1000, 0]
 
 maxLevel = 2; 
 

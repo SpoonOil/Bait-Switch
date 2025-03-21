@@ -1,4 +1,4 @@
-/// @description 
+ /// @description 
 
 // Inherit the parent event
 // Feather disable once GM2040
@@ -9,6 +9,8 @@ pricetag = "magnet"
 
 locked = true;
 lockedSprite = sprAnglerfish
+
+prices = [500, 1000, 2000]
 
 updateLevel = function () {
     global.magnet = level

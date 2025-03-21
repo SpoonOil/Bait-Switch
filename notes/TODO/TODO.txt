@@ -1,10 +1,9 @@
 TODO:
 =
 ---
- - make tape not look like shit
- - tweak mola
+ //- make tape not look like shit
+ //- tweak mola
  - credits
- - make everything quieter
  - rebalance shop prices
  - debug costume code
  - make sure all sounds and music in the game are at a balanced volume

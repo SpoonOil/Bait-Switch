@@ -13,7 +13,7 @@ infos = [info, info, info, info2]
 
 price = 10;
 
-prices = [100, 200, 300, 400, 0]
+prices = [50, 300, 600, 1000, 0]
 
 pricetag = "bait"
 maxLevel = 3

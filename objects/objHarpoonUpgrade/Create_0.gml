@@ -9,6 +9,8 @@ info = "A homing harpoon makes avoiding my line a living hell. Multiple harpoons
 pricetag = "harpoon"
 locked = true;
 
+prices = [400, 650, 1000, 0]
+
 lockedSprite = sprSwordfish
 
 updateLevel = function () {

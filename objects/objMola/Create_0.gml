@@ -4,25 +4,26 @@
 // Inherit the parent event
 event_inherited();
 
+function attractObj(range, object, force) {
+    if (distance_to_object(object) < range) {
+            var hookAngle = point_direction(x, y, object.x, object.y)
+            var avoidFactor = force
+            
+            dx += lengthdir_x(avoidFactor, hookAngle)
+            dy += lengthdir_y(avoidFactor, hookAngle)
+    }
+}
 swimming = function () {
-    hookAngle = point_direction(objHook.x, objHook.y, x, y)
-
-    var avoidFactor = 0.005
+    attractObj(200, objHook, -0.5)
     
-    hookFactorX = (1000 - abs(x - objHook.x))/2000
-    hookFactorY = (1000 - abs(y - objHook.y))/2000
-    if (hookFactorX < 0) {
-        hookFactorX = 0
+    if (objFish.state != objFish.stunned || objFish.stuck == false) {
+        attractObj(500, objFish, 0.25)
+    } else {
+        attractObj(500, objFish, -0.25)
     }
-    
-    if (hookFactorY < 0) {
-        hookFactorY = 0
-    }
-    dx += lengthdir_x(spd, hookAngle) * avoidFactor * (hookFactorX)
-    dy += lengthdir_y(spd, hookAngle) * avoidFactor * (hookFactorY)
     
     var marginAmount = 250
-    var marginAvoidFactor = 0.05
+    var marginAvoidFactor = 1
     
     if (y > room_height - marginAmount) {
         dy -= marginAvoidFactor
@@ -40,8 +41,9 @@ swimming = function () {
     
     image_angle = angle
     
-    x+= dx * spd
-    y+= dy * spd
+    clampSpd()
+    x+= dx
+    y+= dy
 }
 
 hooked = function () {
@@ -62,9 +64,25 @@ function catchFish(hooker) {
 
 scale = 0.75
 
+minSpd = 1
+maxSpd = 10
+
 image_xscale = scale
 image_yscale = scale
 spd = 10
 
 dx = 0
 dy = 0
+
+function clampSpd () {
+    
+    var rawSpd = dx * dx + dy * dy
+    spd = sqrt(rawSpd)//pythag
+    
+    if (spd > maxSpd) {
+        var clampFactor = maxSpd/spd
+        
+        dx *= clampFactor
+        dy *= clampFactor
+    }
+}
