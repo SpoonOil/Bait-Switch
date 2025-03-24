@@ -15,3 +15,13 @@ reeling = false;
 
 image_xscale = 0.25
 image_yscale = 0.25
+
+function forceFieldRepulse() {
+    var yOffset = sqrt((objAnglerfish.forcefieldRadius * objAnglerfish.forcefieldRadius) - ((x - objAnglerfish.x) * (x - objAnglerfish.x)))
+
+    if (y > objAnglerfish.y) {
+        y = objAnglerfish.y + yOffset
+    } else if (y < objAnglerfish.y) {
+        y = objAnglerfish.y - yOffset
+    }
+}

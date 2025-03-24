@@ -3,4 +3,5 @@
 if (global.caughtMola) {
     sprite_index = sprTape
     text = "???"
+    priceRenderer.parent = "portal"
 }

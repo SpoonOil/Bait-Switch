@@ -18,6 +18,8 @@ pricetag ="line"
 
 hovered = false;
 
+hoverHint = true;
+
 updateLevel = function () {
     global.line = level
     

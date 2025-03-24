@@ -1,9 +1,20 @@
 /// @description 
 image_angle = direction + 90
 
+var inForceField = false
+
+if (instance_number(objAnglerfish) > 0) {
+    inForceField = (point_distance(x, y, objAnglerfish.x, objAnglerfish.y) < objAnglerfish.forcefieldRadius)
+}
+
+if (inForceField) {
+    forceFieldRepulse()
+}
+
 if (speed = 0 || reeling) {
     direction = point_direction(targetX,targetY, x, y)
-    if (objHook.state() = "reeling") {
+    
+    if (objHook.state = objHook.reeling) {
         targetY = objHook.y
         targetX = objHook.x
         speed = objHook.vy

@@ -60,7 +60,7 @@ function spawnSpecialFish() {
                        instance_create_layer(-100-_xDiff, 700, "Instances", objSwordfish)
                        specialSpawned = true;
                    } else {
-                       instance_create_layer(-100-_xDiff, 660, "Instances", objAnglerfish) 
+                       instance_create_layer(-100-_xDiff, choose(400, 500, 660), "Instances", objAnglerfish) 
                        specialSpawned = true;  
                    }
                 break;
