@@ -15,7 +15,6 @@ function spawnSpecialFish() {
         
         if (specialSpawned = false) {
             
-            show_debug_message(global.caughtMola)
             if (global.caughtMola) {
                 fishToSpawn = specialFishes[irandom_range(0, array_length(specialFishes)-1)]
                 

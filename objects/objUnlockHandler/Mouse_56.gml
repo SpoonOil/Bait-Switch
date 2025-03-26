@@ -1,3 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
-room_goto(CostumeUnlockRoom)
+if (sprite_index == sprLevelUnlock) {
+    startUnlock(sprCostumeUnlockInvis)
+} else if (activeUnlock) {
+    endUnlock()
+}

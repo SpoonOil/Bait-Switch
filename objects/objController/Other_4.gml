@@ -50,7 +50,6 @@ if (
     room == TheEnd || 
     room == CostumeShop || 
     room == CutsceneFishing ||
-    room == CostumeUnlockRoom ||
     room == UnlockRoom ||
     room == SpecialCaught
 ) {

@@ -18,7 +18,7 @@ if (global.anglerFails >= 16) {
 }
 
 if (global.deaths == 20) {
-    room_goto(CostumeUnlockRoom)
+    objUnlockHandler.startUnlock(sprCostumeUnlockDry)
     exit
 }
 

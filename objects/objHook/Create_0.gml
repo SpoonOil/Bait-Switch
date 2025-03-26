@@ -98,6 +98,10 @@ reset = function() {
             room_goto(AnglerTutorial2)
             exit
         }
+        
+        if (global.dashes >= 200) {
+            objUnlockHandler.startUnlock(sprCostumeUnlockSilverfish)
+        }
     }
     y= -32
     state = aiming 
@@ -155,7 +159,7 @@ reset = function() {
             instance_destroy()
             if (!global.scatterUnlock) { 
                 global.scatterUnlock = true;
-                room_goto(SpecialCaught)
+                objUnlockHandler.startUnlock(sprCaughtDisplay, 3) // Indexes: [Mola, Angler, Sword, Barrel]
             } else {
                 
             }
@@ -170,7 +174,7 @@ reset = function() {
             instance_destroy()
             if (!global.harpoonUnlock) { 
                 global.harpoonUnlock = true;
-                room_goto(SpecialCaught)
+                objUnlockHandler.startUnlock(sprCaughtDisplay, 2)
             } else {
             }
         } 
@@ -184,7 +188,7 @@ reset = function() {
             instance_destroy()
             if (!global.magnetUnlock) { 
                 global.magnetUnlock = true; 
-                room_goto(SpecialCaught)
+                objUnlockHandler.startUnlock(sprCaughtDisplay, 1)
             } else {
             }
         }
@@ -197,7 +201,7 @@ reset = function() {
             instance_destroy()
             if (!global.portalUnlock) { 
                 global.portalUnlock = true; 
-                room_goto(SpecialCaught)
+                objUnlockHandler.startUnlock(sprCaughtDisplay, 0)
             } else {
             }
         }

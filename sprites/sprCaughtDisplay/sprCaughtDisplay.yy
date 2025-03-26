@@ -28,8 +28,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"Sprites",
-    "path":"folders/Sprites.yy",
+    "name":"Unlock Screens",
+    "path":"folders/Sprites/Unlock Screens.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

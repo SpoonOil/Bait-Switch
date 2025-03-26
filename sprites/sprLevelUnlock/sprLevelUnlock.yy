@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"Cutscenes",
-    "path":"folders/Sprites/Cutscenes.yy",
+    "name":"Unlock Screens",
+    "path":"folders/Sprites/Unlock Screens.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

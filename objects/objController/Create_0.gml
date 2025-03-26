@@ -24,6 +24,7 @@ global.molaBounces      = 0;
 global.dashes           = 0;
 
 global.usedCodes        = []
+global.finishedUnlocks  = []
 
 global.scatterUnlock    = false;
 global.harpoonUnlock    = false;
@@ -105,6 +106,7 @@ function save() {
         tutorial1 : global.tutorial1,
         tutorial2 : global.tutorial2,
         spawnStarfish : global.spawnStarfish,
+        finishedUnlocks : global.finishedUnlocks,
         data
     }
     
@@ -170,3 +172,5 @@ if (file_exists("saveData.dat")) {
 }
 
 //devMode()
+
+unlockHandler = instance_create_depth(x, y, 0, objUnlockHandler)

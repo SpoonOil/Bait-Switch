@@ -3,6 +3,6 @@
 // Inherit the parent event
 event_inherited();
 
-text = "Bait"
+text = "Magnet"
 
-priceRenderer.parent = "bait"
+priceRenderer.parent = "magnet"

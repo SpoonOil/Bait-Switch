@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"Costume Unlocks",
-    "path":"folders/Sprites/Costume Unlocks.yy",
+    "name":"Unlock Screens",
+    "path":"folders/Sprites/Unlock Screens.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
