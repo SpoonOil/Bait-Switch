@@ -2,6 +2,11 @@
 
 debug = false;
 
+originX = 0
+originY = 0
+
+range = 500
+
 preFire = function () {
     x = objHook.x + lengthdir_x(60, objHook.image_angle+90)
     y = objHook.y + lengthdir_y(60, objHook.image_angle+90)
@@ -12,13 +17,17 @@ preFire = function () {
 }
 
 firing = function () {
-    speed= speed*0.92-1;
+    var distanceFromStart = point_distance(originX, originY, x, y)
+    var distanceToMax = range - distanceFromStart
     
-    if (speed <=0) {
-        speed = 0;
-        state = finished;
+    if (distanceToMax <= 30) {
+        speed = speed*0.8-0.1
     }
     
+    if (speed <= 0) {
+        speed = 0;
+        state = finished
+    }
     return "firing"
 }
 
@@ -40,9 +49,14 @@ finished = function () {
 
 reeling = function () {
     direction = point_direction(x, y, objHook.x, objHook.y-60)
-    var _targetAngle = direction+180 + objHook.image_angle - 90
+    var _targetAngle = objHook.image_angle + 90
+    var turnSpeed = 2
     
-    image_angle = (_targetAngle + image_angle + image_angle + image_angle + image_angle) / 5
+    if (angle_difference(image_angle, _targetAngle) > 0) {
+        image_angle+=turnSpeed
+    } else if (angle_difference(image_angle, _targetAngle) < 0) {
+        image_angle-=turnSpeed
+    }
     if (speed < 25) {
         speed = 25
     } else {

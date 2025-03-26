@@ -1,3 +1,3 @@
-global.difficulty = 0
+global.difficulty = 1
 
-global.scatter = 2
+global.harpoon = 1
