@@ -3,7 +3,7 @@ aiming = function () {
     vy = 0 
     var _dist = objFish.x - x; 
     
-    var repeats = irandom_range(1, 5)
+    var repeats = irandom_range(1, 3)
     for (var i = 0; i < repeats; i++) {
         vx += _dist/10 
     }
@@ -542,7 +542,7 @@ portalsLeft = portalLevel;
 
 reeledPortals = 0
 
-uses = 3;
+uses = 10;
 vx = 0;
 vy = 0;
 attachX = x + lengthdir_x(60, image_angle+90)

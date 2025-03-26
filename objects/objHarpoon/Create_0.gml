@@ -7,6 +7,10 @@ originY = 0
 
 range = 500
 
+if (global.difficulty == 0) {
+    range = 600
+}
+
 preFire = function () {
     x = objHook.x + lengthdir_x(60, objHook.image_angle+90)
     y = objHook.y + lengthdir_y(60, objHook.image_angle+90)

@@ -1,3 +1,3 @@
-global.difficulty = 1
+global.difficulty = 0
 
-global.harpoon = 1
+global.portal = 3
