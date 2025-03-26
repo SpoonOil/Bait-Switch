@@ -11,6 +11,7 @@ if (other.state = other.firing) {
         stuck = true;
         stuckTo = other
         objFishSpawner.fishToSpawn++;
+        objHook.miniCatch()
 
     }
 }

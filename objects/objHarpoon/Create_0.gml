@@ -13,6 +13,7 @@ preFire = function () {
 
 firing = function () {
     speed= speed*0.92-1;
+    
     if (speed <=0) {
         speed = 0;
         state = finished;

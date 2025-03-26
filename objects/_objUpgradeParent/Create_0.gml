@@ -32,10 +32,10 @@ updatePrice = function updatePrice () {
             if (parent == other.pricetag) {
                 if (other.price < 1000) {
                     value = other.price
-                } else if (price < 10000) {
-                    value = string_format(price/1000, 1, 1) + "k"
+                } else if (other.price < 10000) {
+                    value = string_format(other.price/1000, 1, 1) + "k"
                 } else {
-                    value = string_format(price/1000, 1, 0) + "k"
+                    value = string_format(other.price/1000, 1, 0) + "k"
                 }
             }
         }

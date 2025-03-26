@@ -11,6 +11,12 @@ if (global.cash > selected.price) {
     
     playSound(sndSold)
     selected.level++
+    
+    if (selected.pricetag == "line") {
+        show_debug_message("bruh123")
+        objController.goCutscene = true;
+    }
+    
     selected.updateLevel()
     selected.regenerateButtons()
 } else {

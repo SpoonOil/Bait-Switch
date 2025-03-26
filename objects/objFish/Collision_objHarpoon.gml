@@ -1,6 +1,6 @@
 /// @description 
 
-if (other.state() == "firing") {
+if (other.state == other.firing) {
     if (!stuck) {
         stuck = true;
         stuckTo = other

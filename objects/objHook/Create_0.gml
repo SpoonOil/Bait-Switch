@@ -66,7 +66,7 @@ triggerHarpoons = function () {
 }
 
 reset = function() {
-    
+    popCount = 0
     if (uses = 0) {
         
         if (global.line == 2 && global.magnetUnlock == false && global.harpoonUnlock == true) {
@@ -198,6 +198,7 @@ reset = function() {
         if (stuck) {
             global.cash +=value;
             global.caught++;
+            global.caughtMola = true;
             instance_destroy()
             if (!global.portalUnlock) { 
                 global.portalUnlock = true; 
@@ -233,6 +234,11 @@ reset = function() {
     objController.collectData()
 }
 
+popCount = 0
+function miniCatch() {
+    popCount++
+    audio_play_sound(sndPop, 10, false, 1, 0, 0.75 + (choose(0.25, -0.25, 0.1, -0.1)))
+}
 scatterHooks = function () {
     canScatter = false;
     var _miniHook1 = undefined
@@ -270,13 +276,13 @@ sinking = function () {
     var portalBoost = 5
     var canPortal = portalsLeft > 0
     
-    sinkStage = getSinkStage()
+    var sinkStage = getSinkStage()
     
     if (inForceField) {
         if (instance_number(objHarpoon) > 0) {
             instance_destroy(objHarpoon)
         }
-        botTimer = 30
+        botTimer = 10
         state = bottomed
         return
     }
@@ -307,7 +313,7 @@ function forceFieldRepulse() {
 
     if (y > objAnglerfish.y) {
         y = objAnglerfish.y + yOffset
-    } else if (y > objAnglerfish.y) {
+    } else if (y < objAnglerfish.y) {
         y = objAnglerfish.y - yOffset
     }
 }
@@ -350,7 +356,8 @@ function getSinkStage() {
 }
 
 inPortal = function () {
-    vy = 15 + array_length(portalsStack)*5
+    var portalBoostFactor = 2
+    vy = 15 + array_length(portalsStack)*portalBoostFactor
     
     if (!checkOffscreen()) {
         createLinePoint()
@@ -434,7 +441,7 @@ bottomed = function () {
 }
 
 reeling = function () {
-    vy = -16*(reeledPortals+1)
+    vy = -11 - 5*(reeledPortals+1)
     
     var inForceField = false
     if (instance_number(objAnglerfish) > 0) {

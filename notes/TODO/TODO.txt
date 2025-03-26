@@ -1,10 +1,25 @@
 TODO:
 =
 ---
- //- make tape not look like shit
- //- tweak mola
  - credits
- - rebalance shop prices
- - debug costume code
- - make sure all sounds and music in the game are at a balanced volume
+ //- rebalance star pric~es
+ //- fix hook physics
+ - make tape look good
+ - add strums to cutscene
+ - look around for polish
+ //- whale keeps whaling
 ---
+
+Kobe playtest notes:
+Didn't notice harpoon. Need to move pricetag :(
+anglerfish is tough to figure out wtf it does
+collectin stars should be more viceral
+low interest in costumes
+missed depth selector
+hitbox for scatter (wants to able to dodge between
+
+ideas from kobe:
+Make it tournament
+Make it a level based game with new gimmicks
+less fish
+

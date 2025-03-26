@@ -156,7 +156,7 @@ costumes = [
         },
         locked: false,
         owned: false,
-        price: 101,
+        price: 30,
         cashPay: false,
         lockedText: "",
         flavorText: "Right under your nose!"
@@ -169,7 +169,7 @@ costumes = [
         },
         locked: false,
         owned: false,
-        price: 10,
+        price: 5,
         cashPay: false,
         lockedText: "",
         flavorText: "It hurts to look at"
@@ -196,7 +196,7 @@ costumes = [
         },
         locked: false,
         owned: false,
-        price: 50,
+        price: 10,
         cashPay: false,
         lockedText: "",
         flavorText: "Answer the age old question"
@@ -211,7 +211,7 @@ costumes = [
         owned: false,
         price: 3,
         cashPay: true,
-        lockedText: "Collect 75 stars lifetime",
+        lockedText: "Collect 50 stars lifetime",
         flavorText: "I wish I wish I hadn’t killed that fish!"
     },
     {
@@ -224,7 +224,7 @@ costumes = [
         owned: false,
         price: 3000,
         cashPay: true,
-        lockedText: "Collect 200 stars lifetime",
+        lockedText: "Collect 100 stars lifetime",
         flavorText: "It might actually be a kind of \"Super Fish\""
     },
     {
@@ -235,7 +235,7 @@ costumes = [
         },
         locked: false,
         owned: false,
-        price: 15,
+        price: 5,
         cashPay: false,
         lockedText: "",
         flavorText: "Wow."
@@ -248,7 +248,7 @@ costumes = [
         },
         locked: false,
         owned: false,
-        price: 15,
+        price: 5,
         cashPay: false,
         lockedText: "",
         flavorText: "Yup. Looks pretty wacky to me"
@@ -261,7 +261,7 @@ costumes = [
         },
         locked: false,
         owned: false,
-        price: 15,
+        price: 5,
         cashPay: false,
         lockedText: "",
         flavorText: "It’s not spelled wrong it’s a creative choice"
@@ -274,7 +274,7 @@ costumes = [
         },
         locked: false,
         owned: false,
-        price: 10,
+        price: 5,
         cashPay: false,
         lockedText: "",
         flavorText: "Self explanatory"
@@ -287,7 +287,7 @@ costumes = [
         },
         locked: true,
         owned: false,
-        price: 13000,
+        price: 10000,
         cashPay: true,
         lockedText: "Fully upgrade Scatter",
         flavorText: "A face only a mother could love"
@@ -300,20 +300,20 @@ costumes = [
         },
         locked: true,
         owned: false,
-        price: 15000,
+        price: 10000,
         cashPay: true,
         lockedText: "Fully upgrade Harpoon",
         flavorText: "Come in swingin’"
     },
     {
-        sprite: sprAnglerfishCost,
+        sprite: sprAnglerCost,
         name: "Da Anglerfish",
         checkUnlocked: function () {
             return global.magnet == 3
         },
         locked: true,
         owned: false,
-        price: 17000,
+        price: 10000,
         cashPay: true,
         lockedText: "Fully upgrade magnet",
         flavorText: "There’s something glowing!"
@@ -340,7 +340,7 @@ costumes = [
         },
         locked: false,
         owned: false,
-        price: 50,
+        price: 35,
         cashPay: false,
         lockedText: "",
         flavorText: "Take pride in your scales"
@@ -349,26 +349,42 @@ costumes = [
         sprite: sprPaperCost,
         name: "Da Bubby",
         checkUnlocked: function () {
-            return true;
+            var unlocked = 0
+            for (var i = 0; i < array_length(objShop.costumes); i++) {
+                var costume = objShop.costumes[i]
+                if (costume.owned) {
+                    unlocked++
+                }
+            }
+            
+            return unlocked >= 10
         },
         locked: true,
         owned: false,
         price: 2500,
         cashPay: true,
-        lockedText: "",
+        lockedText: "Purchase 15 costumes",
         flavorText: "It was a good idea on paper"
     },
     {
         sprite: sprOldFashionedCost,
         name: "Da Silly Willy",
         checkUnlocked: function () {
-            return global.molaBounces >= 5;
+            var unlocked = 0
+            for (var i = 0; i < array_length(objShop.costumes); i++) {
+                var costume = objShop.costumes[i]
+                if (costume.owned) {
+                    unlocked++
+                }
+            }
+            
+            return unlocked >= 15
         },
         locked: true,
         owned: false,
         price: 5000,
         cashPay: true,
-        lockedText: "Collect 500 stars lifetime",
+        lockedText: "Purchase 15 costumes",
         flavorText: "A timeless classic fished out of a grey river"
     },
     {
@@ -541,9 +557,12 @@ function getCostumeFromSprite(sprite) {
     }
 }
 
-function debugUnlock() {
+function debugUnlock(exceptList = []) {
     for (var _i = 0; _i < array_length(costumes); _i++) {
-        costumes[_i].locked = false
+        if (!array_contains(exceptList, costumes[_i].name)) {
+            costumes[_i].locked = false 
+            costumes[_i].owned = true
+        }
     }
 }
 
@@ -554,7 +573,7 @@ function checkLocked() {
     }
 }
 function buyCostume(costume) {
-    if (costume.cashPay && global.cash > costume.price) {
+    if (costume.cashPay && global.cash >= costume.price) {
         var _sold = instance_create_layer(mouse_x, mouse_y, "Booms", objBoom) 
         _sold.sprite_index = sprSold
         audio_play_sound(sndSold, 10, false)
@@ -562,7 +581,7 @@ function buyCostume(costume) {
         global.cash-=costume.price
         checkLocked()
         objController.save()
-    } else if (!costume.cashPay && global.starfish > costume.price) {
+    } else if (!costume.cashPay && global.starfish >= costume.price) {
         var _sold = instance_create_layer(mouse_x, mouse_y, "Booms", objBoom) 
         _sold.sprite_index = sprSold
         audio_play_sound(sndSold, 10, false)

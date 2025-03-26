@@ -179,6 +179,9 @@ function activateCode(code) {
         case "MOUSE":
             objShop.unlockCostume("Da Silly Willy")
             break;
+        case "JOHNBANG":
+            objShop.debugUnlock(["Da Last Laugh", "Da Bloop"])
+            break;
     }
 }
 

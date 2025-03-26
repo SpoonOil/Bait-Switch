@@ -5,7 +5,7 @@ if (!stuck) {
     stuck = true;
     stuckTo = other
     objFishSpawner.fishToSpawn++;
-
+        objHook.miniCatch()
 }
 
 

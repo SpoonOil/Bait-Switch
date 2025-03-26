@@ -114,6 +114,8 @@ if (checkOffscreen() && state != reeling && state != unPortalling) {
     renderCallout()
 }
 
+
+
 function renderCallout() {
     var calloutX = 0
     var calloutY = 0

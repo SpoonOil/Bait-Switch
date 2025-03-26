@@ -34,7 +34,7 @@ global.portalUnlock     = false;
 global.spawnFishes      = true;
 global.spawnStarfish    = false;
 global.hookActive       = true;
-global.dev              = true;
+global.dev              = false;
 global.canSell          = false;
 global.beatGame         = false;
 global.caughtMola       = false;
@@ -44,6 +44,7 @@ global.firstFish        = false;
 global.tutorial1        = true;
 global.tutorial2        = true;
 
+goCutscene = true;
 debugMode = false;
 timer = 0
 songs = []
@@ -84,6 +85,7 @@ function save() {
         weight : global.weight,
         magnet : global.magnet,
         harpoon : global.harpoon,
+        scatter : global.scatter,
         portal : global.portal,
         cash: global.cash,
         caught : global.caught,
@@ -130,7 +132,9 @@ function Data(
     _harpoon, 
     _portal, 
     _weight, 
-    _scatter
+    _scatter,
+    _stars,
+    _starsCaught
 ) 
 constructor {
     time = _time;
@@ -143,10 +147,25 @@ constructor {
     weight = _weight;
     scatter = _scatter;
     cash = _cash;
+    stars = _stars;
+    starsCaught = _starsCaught
 }
 
 function collectData() {
-    var dataPoint = new Data(timer, global.cash, global.caught, global.line, global.bait, global.magnet, global.harpoon, global.portal, global.weight, global.scatter)
+    var dataPoint = new Data(
+    // theres gotta be a better way to do this.
+    timer, 
+    global.cash, 
+    global.caught, 
+    global.line, 
+    global.bait, 
+    global.magnet, 
+    global.harpoon, 
+    global.portal, 
+    global.weight, 
+    global.scatter,
+    global.starfish,
+    global.starfishCaught)
     array_push(data, dataPoint)
 }
 

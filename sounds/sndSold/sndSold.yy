@@ -21,5 +21,5 @@
   "sampleRate":44100,
   "soundFile":"sndSold.wav",
   "type":0,
-  "volume":0.84,
+  "volume":0.25,
 }
