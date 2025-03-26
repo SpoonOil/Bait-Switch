@@ -17,7 +17,7 @@ function spawnSpecialFish() {
             
             show_debug_message(global.caughtMola)
             if (global.caughtMola) {
-                fishToSpawn = specialFishes[irandom_range(0, array_length(specialFishes)-1)]
+                fishToSpawn = choose(objBarreleye, objSwordfish, objAnglerfish, objMola)
                 
                 show_debug_message("sending rando fish")
                 instance_create_layer(0-_xDiff, 300-_xDiff/2, "Instances", fishToSpawn)
@@ -50,7 +50,8 @@ function spawnSpecialFish() {
                        global.harpoon = 3 &&
                        global.magnet = 3 &&
                        global.weight = 3 &&
-                       global.scatter = 2) {
+                       global.scatter = 2 && 
+                       !global.beatGame) {
                        instance_create_layer(-100-_xDiff, room_height/2+150, "Instances", objWhale)
                        specialSpawned = true;
                    } else if (!global.scatterUnlock) {

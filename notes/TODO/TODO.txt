@@ -2,12 +2,12 @@ TODO:
 =
 ---
  - credits
- //- rebalance star prices
+ //- rebalance star pric~es
  //- fix hook physics
  - make tape look good
  - add strums to cutscene
  - look around for polish
- - whale keeps whaling
+ //- whale keeps whaling
 ---
 
 Kobe playtest notes:

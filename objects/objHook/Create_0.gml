@@ -194,6 +194,7 @@ reset = function() {
         if (stuck) {
             global.cash +=value;
             global.caught++;
+            global.caughtMola = true;
             instance_destroy()
             if (!global.portalUnlock) { 
                 global.portalUnlock = true; 
@@ -351,7 +352,8 @@ function getSinkStage() {
 }
 
 inPortal = function () {
-    vy = 15 + array_length(portalsStack)*5
+    var portalBoostFactor = 2
+    vy = 15 + array_length(portalsStack)*portalBoostFactor
     
     if (!checkOffscreen()) {
         createLinePoint()
@@ -435,7 +437,7 @@ bottomed = function () {
 }
 
 reeling = function () {
-    vy = -16*(reeledPortals+1)
+    vy = -11 - 5*(reeledPortals+1)
     
     var inForceField = false
     if (instance_number(objAnglerfish) > 0) {
