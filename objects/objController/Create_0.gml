@@ -170,7 +170,7 @@ function collectData() {
 }
 
 function load() {
-    var buffer = buffer_load("saveData.dat")
+    var buffer = buffer_load("saveData-00.dat")
     
     var saveString = buffer_read(buffer, buffer_string)
     var save = json_parse(saveString)
@@ -186,7 +186,7 @@ function load() {
     }
 }
 
-if (file_exists("saveData.dat")) {
+if (file_exists("saveData-00.dat")) {
     load()
 }
 
