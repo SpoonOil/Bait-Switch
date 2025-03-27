@@ -4,7 +4,7 @@
 if (stuck) {  
     image_xscale = base_xscale  
     speed = 0 
-    if (global.difficulty > 0) {
+    if (global.difficulty != 0) {
         resetStars(100)
     }
     switch (stuckTo.object_index) {

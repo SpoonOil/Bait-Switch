@@ -1,10 +1,10 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-hoverTop = min(objDepthUpgrade.y, top)
-hoverBot = max(objDepthUpgrade.y+objDepthUpgrade.sprite_height, bot)
-hoverLeft = objDepthUpgrade.x
-hoverRight = x + width + arrowOffset
+var hoverTop = min(objDepthUpgrade.y, top)
+var hoverBot = max(objDepthUpgrade.y+objDepthUpgrade.sprite_height, bot)
+var hoverLeft = objDepthUpgrade.x
+var hoverRight = x + width + arrowOffset
 
 if (
     mouse_x < hoverLeft || 

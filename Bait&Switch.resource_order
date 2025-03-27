@@ -153,6 +153,7 @@
     {"name":"StarTutorial","order":1,"path":"rooms/StarTutorial/StarTutorial.yy",},
     {"name":"Tacklebox","order":2,"path":"rooms/Tacklebox/Tacklebox.yy",},
     {"name":"TestBlank","order":8,"path":"rooms/TestBlank/TestBlank.yy",},
+    {"name":"TestBlank2","order":18,"path":"rooms/TestBlank2/TestBlank2.yy",},
     {"name":"TestRoom","order":7,"path":"rooms/TestRoom/TestRoom.yy",},
     {"name":"TheEnd","order":5,"path":"rooms/TheEnd/TheEnd.yy",},
     {"name":"Title","order":3,"path":"rooms/Title/Title.yy",},

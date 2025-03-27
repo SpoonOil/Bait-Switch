@@ -5,7 +5,9 @@
     {"$GMAudioGroup":"","%Name":"audiogroup_default","name":"audiogroup_default","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
   ],
   "configs":{
-    "children":[],
+    "children":[
+      {"children":[],"name":"Config",},
+    ],
     "name":"Default",
   },
   "defaultScriptType":1,
@@ -194,6 +196,7 @@
     {"id":{"name":"StarTutorial","path":"rooms/StarTutorial/StarTutorial.yy",},},
     {"id":{"name":"Tacklebox","path":"rooms/Tacklebox/Tacklebox.yy",},},
     {"id":{"name":"TestBlank","path":"rooms/TestBlank/TestBlank.yy",},},
+    {"id":{"name":"TestBlank2","path":"rooms/TestBlank2/TestBlank2.yy",},},
     {"id":{"name":"TestRoom","path":"rooms/TestRoom/TestRoom.yy",},},
     {"id":{"name":"TheEnd","path":"rooms/TheEnd/TheEnd.yy",},},
     {"id":{"name":"Title","path":"rooms/Title/Title.yy",},},
@@ -488,8 +491,8 @@
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
     {"roomId":{"name":"SplashScreen","path":"rooms/SplashScreen/SplashScreen.yy",},},
-    {"roomId":{"name":"TestBlank","path":"rooms/TestBlank/TestBlank.yy",},},
     {"roomId":{"name":"Title","path":"rooms/Title/Title.yy",},},
+    {"roomId":{"name":"TestBlank","path":"rooms/TestBlank/TestBlank.yy",},},
     {"roomId":{"name":"Dock","path":"rooms/Dock/Dock.yy",},},
     {"roomId":{"name":"CutsceneFishing","path":"rooms/CutsceneFishing/CutsceneFishing.yy",},},
     {"roomId":{"name":"TestRoom","path":"rooms/TestRoom/TestRoom.yy",},},
@@ -508,6 +511,7 @@
     {"roomId":{"name":"AnglerTutorial","path":"rooms/AnglerTutorial/AnglerTutorial.yy",},},
     {"roomId":{"name":"AnglerTutorial2","path":"rooms/AnglerTutorial2/AnglerTutorial2.yy",},},
     {"roomId":{"name":"GraphRoom","path":"rooms/GraphRoom/GraphRoom.yy",},},
+    {"roomId":{"name":"TestBlank2","path":"rooms/TestBlank2/TestBlank2.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[

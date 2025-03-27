@@ -3,3 +3,8 @@
 if (parent == "harpoon" && global.caughtMola) {
     parent = "portal"
 }
+
+if (parent == "line") {
+    x = 566
+    y = 203
+}

@@ -4,9 +4,10 @@ offset = 500
 targetOffset = 500
 
 oldx = undefined
-oldoldx = undefined
+oldoldX = undefined
 selectSpeed = 20
 selectedIndex = 1
+selects = []
 global.selectedSprite = sprDefaultFish;
 
 scrollFactor = 1.5 // 1 = 1:1 pixel scroll
@@ -381,7 +382,7 @@ costumes = [
         },
         locked: true,
         owned: false,
-        price: 5000,
+        price: 2500,
         cashPay: true,
         lockedText: "Purchase 15 costumes",
         flavorText: "A timeless classic fished out of a grey river"
@@ -390,15 +391,20 @@ costumes = [
         sprite: sprJokerCost,
         name: "Da Last Laugh",
         checkUnlocked: function () {
-            var anyLocked = array_all(objShop.costumes, function (costume) { 
-                var exceptedCostumes = [sprSqueakCost, sprJamCost, sprAnglerfishCost, sprBarreleyeCost]
-                if (array_contains(exceptedCostumes, costume.sprite)) {
-                    return costume.locked
-                } else {
-                    return costume.locked
+            var locked = 0
+            for (var i = 0; i < array_length(objShop.costumes); i++) {
+                var costume = objShop.costumes[i]
+                if (costume.locked) {
+                    locked++
+                    if (costume.owned) {
+                        locked--
+                    }
                 }
-            })
-            return anyLocked
+
+            }
+            show_debug_message(locked)
+            
+            return locked == 1
         },
         locked: true,
         owned: false,
@@ -457,7 +463,7 @@ costumes = [
         price: 35,
         cashPay: false,
         lockedText: "Buy 3 ??? Upgrades",
-        flavorText: ""
+        flavorText: "Video Games"
     },
     {
         sprite: sprFetidCost,
@@ -493,6 +499,10 @@ costumes = [
     }
 ]
 
+if (array_length(objController.costumes) > 0) {
+    costumes = objController.costumes
+}
+
 
 
 function unlockCostume(nameString) {
@@ -500,6 +510,14 @@ function unlockCostume(nameString) {
         var costume = costumes[_i];
         if (costumes[_i].name == nameString) {
             costume.locked = false;
+        }
+    }
+}
+
+function ownCostume(nameString) {
+    for (var _i = 0; _i < array_length(costumes); _i++) {
+        var costume = costumes[_i];
+        if (costumes[_i].name == nameString) {
             costume.owned = true;
         }
     }
@@ -556,6 +574,10 @@ function getCostumeFromSprite(sprite) {
     }
 }
 
+/**
+ * Function Description
+ * @param {array<string>} [exceptList]=[] array of NAME STRINGS
+ */
 function debugUnlock(exceptList = []) {
     for (var _i = 0; _i < array_length(costumes); _i++) {
         if (!array_contains(exceptList, costumes[_i].name)) {
@@ -568,9 +590,26 @@ function debugUnlock(exceptList = []) {
 function checkLocked() {
     for (var _i = 0; _i < array_length(costumes); _i++) {
         var _costume = costumes[_i]
-        _costume.locked = !_costume.checkUnlocked()
+        if (_costume.locked) {
+            _costume.locked = !_costume.checkUnlocked()
+        }
     }
 }
+
+function loadOwned (ownedArray) {
+    for (var i = 0; i < array_length(ownedArray); i ++) {
+        ownedName = ownedArray[i]
+        ownCostume(ownedName)
+    }
+}
+
+function loadUnlocked (unlockedArray) {
+    for (var i = 0; i < array_length(unlockedArray); i ++) {
+        ownedName = unlockedArray[i]
+        unlockCostume(ownedName)
+    }
+}
+
 function buyCostume(costume) {
     if (costume.cashPay && global.cash >= costume.price) {
         var _sold = instance_create_layer(mouse_x, mouse_y, "Booms", objBoom) 
@@ -578,7 +617,7 @@ function buyCostume(costume) {
         audio_play_sound(sndSold, 10, false)
         costume.owned = true
         global.cash-=costume.price
-        checkLocked()
+        array_push(global.ownedCostumes, costume.name)
         objController.save()
     } else if (!costume.cashPay && global.starfish >= costume.price) {
         var _sold = instance_create_layer(mouse_x, mouse_y, "Booms", objBoom) 
@@ -586,12 +625,14 @@ function buyCostume(costume) {
         audio_play_sound(sndSold, 10, false)
         costume.owned = true
         global.starfish-=costume.price
-        checkLocked()
+        array_push(global.ownedCostumes, costume.name)
         objController.save()
     } else {
         broke = instance_create_layer(mouse_x, mouse_y, "Booms", objBoom)
         broke.image_index = 5
     }
+    checkLocked()
+    updateUnlocks()
 }
 
 function getSelected(_x, _y, selectArray) {
@@ -605,5 +646,19 @@ function getSelected(_x, _y, selectArray) {
     return -1
 }
 
+function updateUnlocks() {
+    global.unlockedCostumes = []
+    array_foreach(costumes, function(costume, index) {
+        if (!costume.locked) {
+            array_push(global.unlockedCostumes, costume.name)
+        }
+    })
+}
 
+if (array_length(global.ownedCostumes) > 0) {
+    loadOwned(global.ownedCostumes)
+}
 
+if (array_length(global.unlockedCostumes) > 0 ) {
+    loadUnlocked(global.unlockedCostumes)
+}

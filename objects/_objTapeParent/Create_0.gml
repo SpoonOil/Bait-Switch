@@ -13,7 +13,7 @@ priceVector = point_direction(x, y, x+sprite_width*0.625, y+sprite_height/3.5) +
 priceX = x + lengthdir_x(sprite_width*0.625, priceVector)
 priceY = y + lengthdir_y(sprite_width*0.625, priceVector)
 
-priceRenderer = instance_create_depth(priceX, priceY, -1, objPriceRender)
+priceRenderer = instance_create_layer(priceX, priceY, "Prices", objPriceRender)
 priceRenderer.parent = undefined
 priceRenderer.image_angle = image_angle
 priceRenderer.image_xscale = image_xscale

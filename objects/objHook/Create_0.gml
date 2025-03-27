@@ -69,15 +69,21 @@ reset = function() {
     popCount = 0
     if (uses = 0) {
         
-        if (global.line == 2 && global.magnetUnlock == false && global.harpoonUnlock == true) {
+        if (
+            global.line == 2 && 
+            global.magnetUnlock == false && 
+            global.harpoonUnlock == true &&
+            objAnglerfish.stuck == false
+        ) {
             global.anglerFails++
         }
         
-        starsCaught = array_length(objFish.baggedStars)
-        
-        global.starfishCaught+=starsCaught
-        global.starfish+=starsCaught
-
+        if (objFish.stuck == false) {
+            starsCaught = array_length(objFish.baggedStars)
+            
+            global.starfishCaught+=starsCaught
+            global.starfish+=starsCaught
+        }
         if (!global.firstFish) {
           global.firstFish = true
         }
@@ -90,13 +96,11 @@ reset = function() {
             global.anglerFails = 10 
             
             room_goto(AnglerTutorial)
-            exit
         }
         
         if (global.anglerFails >= 16) {
             global.anglerFails = -999999
             room_goto(AnglerTutorial2)
-            exit
         }
         
         if (global.dashes >= 200) {
@@ -134,7 +138,22 @@ reset = function() {
     
     with (objMiniFish) {
         if (stuck) {
-            if (sprite_index == sprFlounder || sprite_index == sprFreakFish) {
+            if (global.beatGame) {
+                if (sprite_index == sprFlounder) {
+                    global.cash +=20;
+                    global.caught++;
+                    instance_destroy()
+                } else if (sprite_index == sprCatfish && global.line = 0) {             
+                    global.cash +=20;
+                    global.caught++;
+                    global.eelsCaught++;
+                    instance_destroy() 
+                } else {
+                    global.cash +=5;
+                    global.caught++;
+                    instance_destroy()
+                }
+            } else if (sprite_index == sprFlounder || sprite_index == sprFreakFish) {
                 global.cash +=5;
                 global.caught++;
                 instance_destroy()
@@ -151,7 +170,24 @@ reset = function() {
         }
     }
     
+    with (objFish) {
+        if (stuck) {
+            if (global.difficulty == 0) {
+                global.cash = round(global.cash/2)
+            } else if (global.difficulty = 1) {
+                global.cash = 0
+            }
+            global.deaths++;
+            
 
+            starsCaught = array_length(objFish.baggedStars)
+            
+            global.starfishCaught+=starsCaught
+            global.starfish+=starsCaught
+            
+            room_goto(Loser)
+        }
+    }
     with (objBarreleye) {
         if (stuck) {
             global.cash +=value;
@@ -208,20 +244,7 @@ reset = function() {
         }
     }
     
-    with (objFish) {
-        if (stuck) {
-            if (global.difficulty == 0) {
-                global.cash = round(global.cash/2)
-            } else if (global.difficulty = 1) {
-                global.cash = 0
-            }
-            global.deaths++;
-            
 
-            
-            room_goto(Loser)
-        }
-    }
     
     with (objWhale) {
         if (speed = 0) {

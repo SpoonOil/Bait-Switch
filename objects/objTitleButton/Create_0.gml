@@ -4,6 +4,6 @@
 // Inherit the parent event
 event_inherited();
 
-if (file_exists("saveData.dat")) {
+if (file_exists("saveData-00.dat")) {
     sprite_index = sprContinueSave
 }

@@ -40,7 +40,7 @@ if (keyboard_check(vk_control) && keyboard_check(ord("G"))) {
 if (debugMode) {
     if (keyboard_check(ord("2"))) {
         if (room == CostumeShop) {
-            objShop.debugUnlock()
+            objShop.debugUnlock(["Da Last Laugh"])
         }
     }
     
@@ -50,6 +50,13 @@ if (debugMode) {
     
     if (keyboard_check(ord("3"))) {
         giveMoney()
+    }
+    
+    if (keyboard_check(vk_right)) {
+        room_goto(TestBlank2)
+    }
+    if (keyboard_check(vk_left)) {
+        room_goto(TestBlank)
     }
 }
 

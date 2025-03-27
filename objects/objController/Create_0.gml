@@ -25,6 +25,8 @@ global.dashes           = 0;
 
 global.usedCodes        = []
 global.finishedUnlocks  = []
+global.unlockedCostumes = []
+global.ownedCostumes    = []
 
 global.scatterUnlock    = false;
 global.harpoonUnlock    = false;
@@ -46,6 +48,7 @@ global.tutorial2        = true;
 
 goCutscene = true;
 debugMode = false;
+costumes = []
 timer = 0
 songs = []
 image_xscale = 0.5
@@ -77,6 +80,8 @@ giveMoney = function() {
     global.starfish = 99999
 }
 
+saveAlias = "saveData-00"
+saveName = saveAlias + ".dat"
 function save() {
     var save = {
         selectedSprite: global.selectedSprite,
@@ -109,12 +114,14 @@ function save() {
         tutorial2 : global.tutorial2,
         spawnStarfish : global.spawnStarfish,
         finishedUnlocks : global.finishedUnlocks,
+        ownedCostumes : global.ownedCostumes,
+        unlockedCostumes : global.unlockedCostumes,
         data
     }
     
     var saveString = json_stringify(save)
     
-    saveStringToFile("saveData", saveString)
+    saveStringToFile(saveAlias, saveString)
     if (instance_number(objSaveDisplay) < 1) {
         var saveIndicator = instance_create_layer(room_width/2, -scribble("Game Saved!").starting_format("fontDisplay", c_white).get_height(), "Instances", objSaveDisplay)
     }
@@ -170,13 +177,15 @@ function collectData() {
 }
 
 function load() {
-    var buffer = buffer_load("saveData-00.dat")
+    var buffer = buffer_load(saveName)
     
     var saveString = buffer_read(buffer, buffer_string)
     var save = json_parse(saveString)
     
     struct_foreach(save, function (key, value) {
-        variable_global_set(key, value)
+        if (variable_global_exists(key)) {
+            variable_global_set(key, value)
+        }
     })
     
     data = save.data
@@ -186,7 +195,7 @@ function load() {
     }
 }
 
-if (file_exists("saveData-00.dat")) {
+if (file_exists(saveName)) {
     load()
 }
 

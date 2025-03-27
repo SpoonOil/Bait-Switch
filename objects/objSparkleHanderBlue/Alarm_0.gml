@@ -1,10 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-interval = random_range(2, 4)
-var _ps = part_system_create();
+_ps = part_system_create();
 part_system_draw_order(_ps, true);
-
 //circle
 var _ptype1 = part_type_create();
 part_type_shape(_ptype1, pt_shape_sphere);

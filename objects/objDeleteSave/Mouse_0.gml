@@ -9,7 +9,7 @@ if (position_meeting(mouse_x, mouse_y, self)) {
 }
 
 if (timer >= maxTimer) {
-    file_delete("saveData.dat")
+    file_delete("saveData-00.dat")
     objTitleButton.sprite_index = sprPlay
     instance_destroy()
 }

@@ -101,7 +101,7 @@ function activateCode(code) {
             objShop.unlockCostume("Da 'Urple")
             break;
         case "CRASH":
-            game_end()
+            show_error("ERROR: Number too large in line 104: yoMama.weight", true)
             break;
         case "IVANKOBE":
             objShop.unlockCostume("Da Silverfish")

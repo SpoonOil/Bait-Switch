@@ -3,7 +3,7 @@
   "%Name":"sprPortalDeco",
   "bboxMode":0,
   "bbox_bottom":370,
-  "bbox_left":776,
+  "bbox_left":775,
   "bbox_right":962,
   "bbox_top":156,
   "collisionKind":1,
@@ -19,7 +19,7 @@
   "height":720,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"b7ec2bec-983c-4ab2-b357-3087aa257e25","blendMode":0,"displayName":"default","isLocked":false,"name":"b7ec2bec-983c-4ab2-b357-3087aa257e25","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"457111d6-0603-4523-9ddb-5f1e8d28ddbc","blendMode":0,"displayName":"default","isLocked":false,"name":"457111d6-0603-4523-9ddb-5f1e8d28ddbc","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"sprPortalDeco",
   "nineSlice":null,

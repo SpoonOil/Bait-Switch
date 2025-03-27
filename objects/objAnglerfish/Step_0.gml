@@ -21,8 +21,8 @@ if (array_length(forcefieldFish) > 0) {
         
         fishRotation += fishGap
         
-        nextFishX = x + lengthdir_x(forcefieldRadius, fishRotation)
-        nextFishY = y + lengthdir_y(forcefieldRadius, fishRotation)
+        var nextFishX = x + lengthdir_x(forcefieldRadius, fishRotation)
+        var nextFishY = y + lengthdir_y(forcefieldRadius, fishRotation)
         fish.image_angle = point_direction(fish.x, fish.y, nextFishX, nextFishY)
     }
 }

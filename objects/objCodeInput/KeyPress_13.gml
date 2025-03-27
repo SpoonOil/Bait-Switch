@@ -12,7 +12,7 @@ function checkCodeValidity(code) {
     return false
 }
 
-valid = checkCodeValidity(codeText)
+var valid = checkCodeValidity(codeText)
 
 if (valid) {
     if (!array_contains(global.usedCodes, codeText)) {
