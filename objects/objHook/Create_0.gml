@@ -542,7 +542,7 @@ portalsLeft = portalLevel;
 
 reeledPortals = 0
 
-uses = 10;
+uses = 3;
 vx = 0;
 vy = 0;
 attachX = x + lengthdir_x(60, image_angle+90)

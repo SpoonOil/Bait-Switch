@@ -487,8 +487,8 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
-    {"roomId":{"name":"TestBlank","path":"rooms/TestBlank/TestBlank.yy",},},
     {"roomId":{"name":"SplashScreen","path":"rooms/SplashScreen/SplashScreen.yy",},},
+    {"roomId":{"name":"TestBlank","path":"rooms/TestBlank/TestBlank.yy",},},
     {"roomId":{"name":"Title","path":"rooms/Title/Title.yy",},},
     {"roomId":{"name":"Dock","path":"rooms/Dock/Dock.yy",},},
     {"roomId":{"name":"CutsceneFishing","path":"rooms/CutsceneFishing/CutsceneFishing.yy",},},

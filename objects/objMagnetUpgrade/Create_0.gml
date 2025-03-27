@@ -10,7 +10,7 @@ pricetag = "magnet"
 locked = true;
 lockedSprite = sprAnglerfish
 
-prices = [500, 1000, 2000, 0]
+prices = [2000, 4000, 8000, 0]
 
 updateLevel = function () {
     global.magnet = level

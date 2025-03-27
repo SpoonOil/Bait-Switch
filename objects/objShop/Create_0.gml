@@ -45,6 +45,19 @@ costumes = [
    //     flavorText: "Not in the game yet"
     //},
     {
+        sprite: sprShadesCost,
+        name: "Da Shades",
+        checkUnlocked: function () {
+            return true;
+        },
+        locked: false,
+        owned: false,
+        price: 100,
+        cashPay: true,
+        lockedText: "",
+        flavorText: "I'm tellin' you, you dumb son of a fish! Try 'em on!"
+    },
+    {
         sprite: sprAlphaCost,
         name: "Da Alpha",
         checkUnlocked: function () {
@@ -130,36 +143,10 @@ costumes = [
         },
         locked: true,
         owned: false,
-        price: 0,
+        price: 250,
         cashPay: true,
         lockedText: "Die a lot",
         flavorText: "No bones about it"
-    },
-    {
-        sprite: sprShadesCost,
-        name: "Da Shades",
-        checkUnlocked: function () {
-            return true;
-        },
-        locked: false,
-        owned: false,
-        price: 100,
-        cashPay: false,
-        lockedText: "",
-        flavorText: "I'm tellin' you, you dumb son of a fish! Try 'em on!"
-    },
-    {
-        sprite: sprStacheCost,
-        name: "Da Stache",
-        checkUnlocked: function () {
-            return true;
-        },
-        locked: false,
-        owned: false,
-        price: 30,
-        cashPay: false,
-        lockedText: "",
-        flavorText: "Right under your nose!"
     },
     {
         sprite: sprBrightCost,
@@ -200,32 +187,6 @@ costumes = [
         cashPay: false,
         lockedText: "",
         flavorText: "Answer the age old question"
-    },
-    {
-        sprite: sprHomerCost,
-        name: "Da Yellow Pop",
-        checkUnlocked: function () {
-            return global.starfishCaught >= 75
-        },
-        locked: true,
-        owned: false,
-        price: 3,
-        cashPay: true,
-        lockedText: "Collect 50 stars lifetime",
-        flavorText: "I wish I wish I hadn’t killed that fish!"
-    },
-    {
-        sprite: sprPollutedCost,
-        name: "Da Polluted",
-        checkUnlocked: function () {
-            return global.starfishCaught >= 200
-        },
-        locked: true,
-        owned: false,
-        price: 3000,
-        cashPay: true,
-        lockedText: "Collect 100 stars lifetime",
-        flavorText: "It might actually be a kind of \"Super Fish\""
     },
     {
         sprite: sprInvertedCost,
@@ -331,7 +292,45 @@ costumes = [
         lockedText: "Catch 30000 fish",
         flavorText: "The Big One"
     },
-
+    {
+       sprite: sprHomerCost,
+       name: "Da Yellow Pop",
+       checkUnlocked: function () {
+           return global.starfishCaught >= 100
+       },
+       locked: true,
+       owned: false,
+       price: 3,
+       cashPay: true,
+       lockedText: "Collect 100 stars lifetime",
+       flavorText: "I wish I wish I hadn’t killed that fish!"
+    },
+    {
+        sprite: sprPollutedCost,
+        name: "Da Polluted",
+        checkUnlocked: function () {
+            return global.starfishCaught >= 200
+        },
+        locked: true,
+        owned: false,
+        price: 3000,
+        cashPay: true,
+        lockedText: "Collect 200 stars lifetime",
+        flavorText: "It might actually be a kind of \"Super Fish\""
+    },
+    {
+        sprite: sprStacheCost,
+        name: "Da Stache",
+        checkUnlocked: function () {
+            return true;
+        },
+        locked: false,
+        owned: false,
+        price: 30,
+        cashPay: false,
+        lockedText: "",
+        flavorText: "Right under your nose!"
+    },
     {
         sprite: sprRainbowCost,
         name: "Da Bow",
@@ -363,7 +362,7 @@ costumes = [
         owned: false,
         price: 2500,
         cashPay: true,
-        lockedText: "Purchase 15 costumes",
+        lockedText: "Purchase 10 costumes",
         flavorText: "It was a good idea on paper"
     },
     {
@@ -388,19 +387,6 @@ costumes = [
         flavorText: "A timeless classic fished out of a grey river"
     },
     {
-        sprite: sprRaveCost,
-        name: "Da Rave",
-        checkUnlocked: function () {
-            return global.molaBounces >= 10
-        },
-        locked: true,
-        owned: false,
-        price: 50,
-        cashPay: false,
-        lockedText: "Bounce 10 times",
-        flavorText: "Life’s a party"
-    },
-    {
         sprite: sprJokerCost,
         name: "Da Last Laugh",
         checkUnlocked: function () {
@@ -420,6 +406,19 @@ costumes = [
         cashPay: true,
         lockedText: "Unlock every costume",
         flavorText: "Oh if I'd only seen that the joke was on me"
+    },
+    {
+        sprite: sprRaveCost,
+        name: "Da Rave",
+        checkUnlocked: function () {
+            return global.molaBounces >= 10
+        },
+        locked: true,
+        owned: false,
+        price: 50,
+        cashPay: false,
+        lockedText: "Bounce 10 times",
+        flavorText: "Life’s a party"
     },
     {
         sprite: sprMountedCost,

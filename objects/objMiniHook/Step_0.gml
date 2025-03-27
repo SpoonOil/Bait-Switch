@@ -15,11 +15,11 @@ if (speed = 0 || reeling) {
     direction = point_direction(targetX,targetY, x, y)
     
     if (objHook.state = objHook.reeling) {
-        targetY = objHook.y
-        targetX = objHook.x
+        targetY = targetY+(lengthdir_x(objHook.vy, objHook.image_angle))
+        targetX = targetX+ (lengthdir_y(objHook.vy, objHook.image_angle))
         speed = objHook.vy
         reeling = true
-        if (distance_to_object(objHook) < 10) {
+        if (point_distance(x, y, objHook.x, objHook.y) < 30) {
         with (all) {
             if (variable_instance_exists(self, "stuckTo") && stuckTo == other) {
                 stuckTo = objHook

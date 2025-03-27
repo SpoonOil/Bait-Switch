@@ -1,3 +1,3 @@
 global.difficulty = 0
 
-global.portal = 3
+global.scatter = 2
