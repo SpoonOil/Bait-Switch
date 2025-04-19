@@ -57,6 +57,9 @@ sprite_index = type
 image_xscale = 0.3
 image_yscale = 0.3
 
+if (room == Credits) {
+    sprite_index = choose(sprCatfish, sprFish, sprFreakFish, sprEel, sprSquirt, sprFlounder)
+}
 updatePosition = function updatePosition () {
     
     closeDx = 0;

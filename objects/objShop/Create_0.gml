@@ -345,6 +345,19 @@ costumes = [
         flavorText: "Take pride in your scales"
     },
     {
+        sprite: sprDeezleCost,
+        name: "Da Deezle",
+        checkUnlocked: function () {
+            return global.saved;
+        },
+        locked: true,
+        owned: false,
+        price: 20,
+        cashPay: false,
+        lockedText: "Save the Game Manually",
+        flavorText: "Bangin'"
+    },
+    {
         sprite: sprPaperCost,
         name: "Da Bubby",
         checkUnlocked: function () {
@@ -390,15 +403,18 @@ costumes = [
         sprite: sprJokerCost,
         name: "Da Last Laugh",
         checkUnlocked: function () {
-            var anyLocked = array_all(objShop.costumes, function (costume) { 
-                var exceptedCostumes = [sprSqueakCost, sprJamCost, sprAnglerfishCost, sprBarreleyeCost]
-                if (array_contains(exceptedCostumes, costume.sprite)) {
-                    return costume.locked
-                } else {
-                    return costume.locked
+            var anyLocked = array_any(objShop.costumes, function (costume) { 
+            
+                var exceptions = ["Da Bloop", "Da Last Laugh"];
+                
+                if (array_contains(exceptions, costume.name)) {
+                    return false;
                 }
+                
+                return costume.locked
             })
-            return anyLocked
+            
+            return !anyLocked
         },
         locked: true,
         owned: false,
@@ -480,7 +496,7 @@ costumes = [
             for (var i = 0; i < array_length(objShop.costumes); i++) {
                 if (objShop.costumes[i].locked == false) {
                     unlocked++
-                } 
+                }
             }
             return unlocked >= 3
         },
@@ -568,9 +584,12 @@ function debugUnlock(exceptList = []) {
 function checkLocked() {
     for (var _i = 0; _i < array_length(costumes); _i++) {
         var _costume = costumes[_i]
-        _costume.locked = !_costume.checkUnlocked()
+        if (_costume.locked) {
+            _costume.locked = !_costume.checkUnlocked()
+        }
     }
 }
+
 function buyCostume(costume) {
     if (costume.cashPay && global.cash >= costume.price) {
         var _sold = instance_create_layer(mouse_x, mouse_y, "Booms", objBoom) 

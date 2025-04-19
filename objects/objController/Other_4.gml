@@ -22,6 +22,8 @@ switch (room) {
     case SpecialCaught:
         pauseAll();
         break;
+    case Credits:
+        toggleMusic(sndCredits)
 }
 function toggleMusic(sound) {
     for (var i = 0; i < array_length(songs); i++) {
@@ -51,7 +53,8 @@ if (
     room == CostumeShop || 
     room == CutsceneFishing ||
     room == UnlockRoom ||
-    room == SpecialCaught
+    room == SpecialCaught ||
+    room == Credits
 ) {
     visible = false;
 } else if (visible == false) {

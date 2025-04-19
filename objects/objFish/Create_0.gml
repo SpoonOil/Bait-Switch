@@ -47,6 +47,7 @@ moving = function () {
     
     
     if (
+        hookActive &&
         objHook.state != objHook.aiming && 
         objHook.magnetLevel > 0 && 
         point_distance(x, y, objHook.x, objHook.y) < 150+objHook.magnetLevel*75

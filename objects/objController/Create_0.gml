@@ -30,6 +30,7 @@ global.scatterUnlock    = false;
 global.harpoonUnlock    = false;
 global.magnetUnlock     = false;
 global.portalUnlock     = false;
+global.saved            = false;
 
 global.spawnFishes      = true;
 global.spawnStarfish    = false;
@@ -170,7 +171,7 @@ function collectData() {
 }
 
 function load() {
-    var buffer = buffer_load("saveData-00.dat")
+    var buffer = buffer_load("saveData.dat")
     
     var saveString = buffer_read(buffer, buffer_string)
     var save = json_parse(saveString)
@@ -186,7 +187,7 @@ function load() {
     }
 }
 
-if (file_exists("saveData-00.dat")) {
+if (file_exists("saveData.dat")) {
     load()
 }
 
