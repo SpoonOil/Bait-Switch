@@ -23,8 +23,9 @@ global.anglerFails      = 0;
 global.molaBounces      = 0;
 global.dashes           = 0;
 
-global.usedCodes        = []
-global.finishedUnlocks  = []
+global.usedCodes        = [];
+global.finishedUnlocks  = [];
+global.costumesBought   = [];
 
 global.scatterUnlock    = false;
 global.harpoonUnlock    = false;
@@ -93,7 +94,7 @@ function save() {
         deaths: global.deaths,
         starfish : global.starfish,
         starfishCaught : global.starfishCaught,
-        eelscaught : global.eelsCaught,
+        eelsCaught : global.eelsCaught,
         anglerFails : global.anglerFails,
         molaBounces : global.molaBounces,
         dashes : global.dashes,
@@ -110,6 +111,7 @@ function save() {
         tutorial2 : global.tutorial2,
         spawnStarfish : global.spawnStarfish,
         finishedUnlocks : global.finishedUnlocks,
+        saved : global.saved,
         data
     }
     

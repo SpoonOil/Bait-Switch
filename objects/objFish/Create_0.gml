@@ -56,8 +56,8 @@ moving = function () {
         if (global.beatGame && adjustedMagnetLevel > 2) {
             adjustedMagnetLevel = 2
         }
-        x = x + lengthdir_x(5+adjustedMagnetLevel*1.7, point_direction(x, y, objHook.x, objHook.y))
-        y = y + lengthdir_y(5+adjustedMagnetLevel*1.7, point_direction(x, y, objHook.x, objHook.y))
+        x = x + lengthdir_x(5+adjustedMagnetLevel*2.2, point_direction(x, y, objHook.x, objHook.y))
+        y = y + lengthdir_y(5+adjustedMagnetLevel*2.2, point_direction(x, y, objHook.x, objHook.y))
     }
     image_angle = direction
     

@@ -283,13 +283,13 @@ costumes = [
         sprite: sprWhaleCost,
         name: "Da Bloop",
         checkUnlocked: function () {
-            return global.caught >=30000;
+            return global.caught >=20000;
         },
         locked: true,
         owned: false,
         price: 20000,
         cashPay: true,
-        lockedText: "Catch 30000 fish",
+        lockedText: "Catch 20000 fish",
         flavorText: "The Big One"
     },
     {
@@ -405,7 +405,7 @@ costumes = [
         checkUnlocked: function () {
             var anyLocked = array_any(objShop.costumes, function (costume) { 
             
-                var exceptions = ["Da Bloop", "Da Last Laugh"];
+                var exceptions = ["Da Last Laugh"];
                 
                 if (array_contains(exceptions, costume.name)) {
                     return false;
@@ -521,6 +521,12 @@ function unlockCostume(nameString) {
     }
 }
 
+function checkAlreadyBought() {
+    array_foreach(global.costumesBought, function (name) {
+        unlockCostume(name)
+    })
+}
+
 totalCostumes = array_length(costumes)
 
 function calculateSelectTargets() {
@@ -596,6 +602,7 @@ function buyCostume(costume) {
         _sold.sprite_index = sprSold
         audio_play_sound(sndSold, 10, false)
         costume.owned = true
+        array_push(global.costumesBought, costume.name)
         global.cash-=costume.price
         checkLocked()
         objController.save()
@@ -604,6 +611,7 @@ function buyCostume(costume) {
         _sold.sprite_index = sprSold
         audio_play_sound(sndSold, 10, false)
         costume.owned = true
+        array_push(global.costumesBought, costume.name)
         global.starfish-=costume.price
         checkLocked()
         objController.save()
