@@ -5,7 +5,6 @@ image_speed = 0
 
 activeUnlock = false;
 
-
 function startUnlock(sprite, frame = 0) {
     //cant double unlock
     if (array_contains(global.finishedUnlocks, string(sprite) + string(frame))) {

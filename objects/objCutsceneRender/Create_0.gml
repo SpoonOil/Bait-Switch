@@ -13,3 +13,6 @@ framesToFade = framesToFade/speedFactor
 maxFrames = maxFrames/speedFactor
 framesPerPic = framesPerPic/speedFactor
 splashFrame = floor(splashFrame/speedFactor)
+
+
+audio_play_sound(sndComboStrum1, 100, false)

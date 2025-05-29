@@ -10,7 +10,7 @@ if (array_length(forcefieldFish) > 0) {
         
         if (!instance_exists(fish)) {
             show_debug_message("no object at index "+ string(fish))
-            array_delete(forcefieldFish, i, 1)
+            forcefieldFish[i] = -1;
             continue
         }
         
@@ -26,6 +26,9 @@ if (array_length(forcefieldFish) > 0) {
         fish.image_angle = point_direction(fish.x, fish.y, nextFishX, nextFishY)
     }
 }
+
+cleanUpForcefield()
+
 
 forcefieldRotation+=forcefieldRotSpeed
 

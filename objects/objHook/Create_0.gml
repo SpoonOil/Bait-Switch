@@ -67,6 +67,9 @@ triggerHarpoons = function () {
 
 reset = function() {
     popCount = 0
+    
+    //This is so that I do not have any problem sending the player to Angler Tutorial overriding everything but the new catch screen
+    var failedAngler = false; 
     if (uses = 0) {
         
         if (global.line == 2 && global.magnetUnlock == false && global.harpoonUnlock == true) {
@@ -88,15 +91,14 @@ reset = function() {
             // this is a stupid way to disable the Tutorial1 Condition while letting the player begin working
             //towards tutorial2
             global.anglerFails = 10 
-            
+            failedAngler = true;
             room_goto(AnglerTutorial)
-            exit
         }
         
         if (global.anglerFails >= 16) {
             global.anglerFails = -999999
+            failedAngler = true;
             room_goto(AnglerTutorial2)
-            exit
         }
         
         if (global.dashes >= 200) {
@@ -210,14 +212,19 @@ reset = function() {
     
     with (objFish) {
         if (stuck) {
+            var stringArray = string(global.cash, "");
+            
+            var isCented = string_ends_with(stringArray, ".1")
+            
             if (global.difficulty == 0) {
                 global.cash = round(global.cash/2)
+                if (isCented) global.cash+=0.1
             } else if (global.difficulty = 1) {
                 global.cash = 0
-            }
-            global.deaths++;
+                if (isCented) global.cash+=0.1
+            } 
             
-
+            global.deaths++;
             
             room_goto(Loser)
         }
@@ -231,7 +238,7 @@ reset = function() {
     
     instance_destroy(objMiniHook)
     instance_destroy(objHarpoon) 
-    objController.collectData()
+    //objController.collectData()
 }
 
 popCount = 0

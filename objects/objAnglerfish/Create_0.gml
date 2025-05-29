@@ -33,3 +33,10 @@ fishCap = 60
 
 image_xscale = _scale
 image_yscale = _scale
+
+function cleanUpForcefield() {
+    while (array_contains(forcefieldFish, -1)) {
+        nullIndex = array_get_index(forcefieldFish, -1)
+        array_delete(forcefieldFish, nullIndex, 1)
+    }
+}

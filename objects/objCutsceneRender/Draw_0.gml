@@ -4,6 +4,17 @@ var framesSinceLast = frame % framesPerPic
 var opacity = framesSinceLast / framesToFade
 if (opacity > 1) opacity = 1
 
+if (frame/floor(framesPerPic) == 1 || frame/floor(framesPerPic) == 2) {
+    
+    var sndIndex = frame/floor(framesPerPic)
+    
+    if (sndIndex = 1) {
+        audio_play_sound(sndComboStrum2, 100, false)
+    } else if (sndIndex = 2) {
+        audio_play_sound(sndComboStrum3, 100, false)
+    }
+}
+
 if (currentFrame > 0) {
 draw_sprite(sprCutscene, 0, x, y)
 }

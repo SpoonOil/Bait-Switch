@@ -111,6 +111,7 @@ function save() {
         tutorial2 : global.tutorial2,
         spawnStarfish : global.spawnStarfish,
         finishedUnlocks : global.finishedUnlocks,
+        costumesBought : global.costumesBought,
         saved : global.saved,
         data
     }

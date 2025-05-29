@@ -87,13 +87,13 @@ costumes = [
         sprite: sprDeepCost,
         name: "Da Deep Dweller",
         checkUnlocked: function () {
-            return global.line == 2;
+            return global.line == 2 || global.beatGame;
         },
         locked: true,
         owned: false,
         price: 230,
         cashPay: true,
-        lockedText: "Max upgrade your line",
+        lockedText: "Fully Upgrade Line",
         flavorText: "Get your freak on"
     },
     {
@@ -276,7 +276,7 @@ costumes = [
         owned: false,
         price: 10000,
         cashPay: true,
-        lockedText: "Fully upgrade magnet",
+        lockedText: "Fully upgrade Magnet",
         flavorText: "There’s something glowing!"
     },
     {

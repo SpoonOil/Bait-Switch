@@ -11,5 +11,5 @@ if (baitLevel == 4) {
 }
 
 if (room == Credits) {
-    starfishToSpawn = 20
+    starfishToSpawn = 10
 }

@@ -20,7 +20,7 @@ closeDx = 0
 closeDy = 0
 
 magnetized = false;
-
+creditsFish = false;
 stuckTo = undefined
 
 /**
@@ -59,6 +59,7 @@ image_yscale = 0.3
 
 if (room == Credits) {
     sprite_index = choose(sprCatfish, sprFish, sprFreakFish, sprEel, sprSquirt, sprFlounder)
+    creditsFish = true;
 }
 updatePosition = function updatePosition () {
     
@@ -118,7 +119,7 @@ updatePosition = function updatePosition () {
     
     nudgeAwayFrom(objFish, 1.2, 20)
     nudgeAwayFrom(objBarreleye, 1.5, 20)
-    if (global.magnet > 0 && objHook.state != objHook.aiming) {
+    if (!creditsFish && global.magnet > 0 && objHook.state != objHook.aiming) {
         nudgeAwayFrom(objHook, 1.5+global.magnet*0.5, -30)
     }
     

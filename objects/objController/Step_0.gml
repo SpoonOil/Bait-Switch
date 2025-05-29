@@ -31,9 +31,9 @@ if (keyboard_check(vk_control) && keyboard_check(ord("S"))) {
 }
 
 
-if (keyboard_check(vk_control) && keyboard_check(ord("G"))) {
-    room_goto(GraphRoom)
-}
+//if (keyboard_check(vk_control) && keyboard_check(ord("G"))) {
+    //room_goto(GraphRoom)
+//}
 
 
 
