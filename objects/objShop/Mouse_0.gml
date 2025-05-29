@@ -1,12 +1,18 @@
 /// @description Insert description here
 // You can write your code in this editor
+show_debug_message(offset)
 
 leftTime++
+
 if (oldx != undefined) {
-    offset += (mouse_x - oldx) * scrollFactor
-    targetOffset += (mouse_x - oldx) * scrollFactor
+    var dist = (mouse_x - oldx) * scrollFactor
+    offset += dist
+    targetOffset += dist
 } else {
-    offset += (mouse_x) * scrollFactor
+    var dist = (mouse_x) * scrollFactor
+    offset += dist
     targetOffset += (mouse_x) * scrollFactor
 }
-oldx = mouse_x
+
+
+show_debug_message(offset)
