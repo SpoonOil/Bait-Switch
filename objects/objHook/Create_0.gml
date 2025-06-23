@@ -212,9 +212,9 @@ reset = function() {
     
     with (objFish) {
         if (stuck) {
-            var stringArray = string(global.cash, "");
+            var cashString = string(global.cash);
             
-            var isCented = string_ends_with(stringArray, ".1")
+            var isCented = string_ends_with(cashString, ".1")
             
             if (global.difficulty == 0) {
                 global.cash = round(global.cash/2)

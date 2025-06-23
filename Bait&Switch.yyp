@@ -1,5 +1,5 @@
 {
-  "$GMProject":"",
+  "$GMProject":"v1",
   "%Name":"Bait&Switch",
   "AudioGroups":[
     {"$GMAudioGroup":"","%Name":"audiogroup_default","name":"audiogroup_default","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
@@ -56,6 +56,7 @@
     {"$GMFolder":"","%Name":"UI Sprites","folderPath":"folders/Sprites/UI Sprites.yy","name":"UI Sprites","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Unlock Screens","folderPath":"folders/Sprites/Unlock Screens.yy","name":"Unlock Screens","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
+  "ForcedPrefabProjectReferences":[],
   "IncludedFiles":[
     {"$GMIncludedFile":"","%Name":"scribble_license.txt","CopyToMask":-1,"filePath":"datafiles","name":"scribble_license.txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"Unlock_sound.mov","CopyToMask":-1,"filePath":"datafiles","name":"Unlock_sound.mov","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
@@ -69,7 +70,7 @@
     {"name":"reversedCircleBlue","path":"particlelib/reversedCircleBlue/reversedCircleBlue.yy",},
   ],
   "MetaData":{
-    "IDEVersion":"2024.11.0.179",
+    "IDEVersion":"2024.13.1.193",
   },
   "name":"Bait&Switch",
   "resources":[
